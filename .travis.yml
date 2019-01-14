@@ -1,0 +1,51 @@
+dist: trusty
+sudo: required
+addons:
+  ssh_known_hosts:
+  - github.com
+  - git.coding.net
+  apt:
+    packages:
+    - nasm
+env:
+  global:
+  - TZ=Asia/Beijing
+language: node_js
+node_js: node
+branches:
+  only:
+  - source
+git:
+  depth: false
+  submodules: false
+cache:
+  apt: true
+  directories:
+  - node_modules
+before_install:
+- openssl aes-256-cbc -K $encrypted_b376455b68d0_key -iv $encrypted_b376455b68d0_iv
+  -in next_config.yml.enc -out next_config.yml -d
+- openssl aes-256-cbc -K $encrypted_02473a1984f4_key -iv $encrypted_02473a1984f4_iv
+  -in id_jumpchan_git.enc -out id_jumpchan_git -d
+- git config --global user.name "jumpchan"
+- git config --global user.email "jumpchan@foxmail.com"
+- git ls-files -z | while read -d '' path; do touch -d "$(git log -1 --format="@%ct"
+  "$path")" "$path"; done
+- git submodule update --recursive --remote --init
+- cd ./themes/next
+- git checkout tags/v6.7.0
+- cd -
+- cp ./comments.swig ./themes/next/layout/_partials/comments.swig
+- git clone --branch=master --single-branch https://github.com/jumpchan/jumpchan.github.io.git
+  .deploy_git
+- eval "$(ssh-agent -s)"
+- chmod 600 ./id_jumpchan_git
+- ssh-add ./id_jumpchan_git
+install: npm install
+before_script:
+- npm install -g gulp
+script:
+- hexo clean --config next_config.yml
+- hexo g --config next_config.yml
+- echo "qpchen.tk" > ./public/CNAME
+- hexo d --config next_config.yml
