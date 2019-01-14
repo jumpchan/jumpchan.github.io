@@ -24,6 +24,8 @@ cache:
   - node_modules
 before_install:
 - openssl aes-256-cbc -K $encrypted_b376455b68d0_key -iv $encrypted_b376455b68d0_iv
+  -in _config.yml.enc -out _config.yml -d
+- openssl aes-256-cbc -K $encrypted_b376455b68d0_key -iv $encrypted_b376455b68d0_iv
   -in next_config.yml.enc -out next_config.yml -d
 - openssl aes-256-cbc -K $encrypted_02473a1984f4_key -iv $encrypted_02473a1984f4_iv
   -in id_jumpchan_git.enc -out id_jumpchan_git -d
@@ -36,6 +38,7 @@ before_install:
 - git checkout tags/v6.7.0
 - rm -f _config.yml
 - cd -
+- cp ./next_config.yml ./themes/next/_config.yml
 - cp ./comments.swig ./themes/next/layout/_partials/comments.swig
 - git clone --branch=master --single-branch https://github.com/jumpchan/jumpchan.github.io.git
   .deploy_git
@@ -46,7 +49,7 @@ install: npm install
 before_script:
 - npm install -g gulp
 script:
-- hexo clean --config next_config.yml
-- hexo g --config next_config.yml
+- hexo clean
+- hexo g
 - echo "qpchen.tk" > ./public/CNAME
-- hexo d --config next_config.yml
+- hexo d
