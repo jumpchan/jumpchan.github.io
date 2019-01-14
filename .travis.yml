@@ -34,6 +34,7 @@ before_install:
 - git submodule update --recursive --remote --init
 - cd ./themes/next
 - git checkout tags/v6.7.0
+- rm -f _config.yml
 - cd -
 - cp ./comments.swig ./themes/next/layout/_partials/comments.swig
 - git clone --branch=master --single-branch https://github.com/jumpchan/jumpchan.github.io.git
