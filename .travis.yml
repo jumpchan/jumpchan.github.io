@@ -17,7 +17,7 @@ branches:
   - source
 git:
   depth: false
-  submodules: false
+  submodules: true
 cache:
   apt: true
   directories:
