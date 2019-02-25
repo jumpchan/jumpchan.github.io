@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://qpchen.tk/"/>
-  <updated>2019-01-15T08:48:13.000Z</updated>
+  <updated>2019-02-25T03:13:44.000Z</updated>
   <id>http://qpchen.tk/</id>
   
   <author>
@@ -17,10 +17,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Domain Specific Words</title>
+    <link href="http://qpchen.tk/2019/02/25/2019-02-25-Domain-Specific-Words/"/>
+    <id>http://qpchen.tk/2019/02/25/2019-02-25-Domain-Specific-Words/</id>
+    <published>2019-02-25T10:59:34.000Z</published>
+    <updated>2019-02-25T03:13:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>This is a record of normal words in computer science domain.</p><h2 id="Domain-Specific-Words"><a href="#Domain-Specific-Words" class="headerlink" title="Domain Specific Words"></a>Domain Specific Words</h2><h3 id="Vanilla-Code"><a href="#Vanilla-Code" class="headerlink" title="Vanilla Code"></a>Vanilla Code</h3><p>Vanilla often refers to pure or plain. So in terms of programming languages, it means either without the use of 3rd party libraries or without the use of frameworks.</p><p>在计算机编程的范畴中，通常表示不使用第三方库或任何相关的框架平台等。</p><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;This is a record of normal words in computer science domain.&lt;/p&gt;
+&lt;h2 id=&quot;Domain-Specific-Words&quot;&gt;&lt;a href=&quot;#Domain-Specific-Words&quot; class=&quot;headerlink&quot; title=&quot;Domain Specific Words&quot;&gt;&lt;/a&gt;Domain Specific Words&lt;/h2&gt;&lt;h3 id=&quot;Vanilla-Code&quot;&gt;&lt;a href=&quot;#Vanilla-Code&quot; class=&quot;headerlink&quot; title=&quot;Vanilla Code&quot;&gt;&lt;/a&gt;Vanilla Code&lt;/h3&gt;&lt;p&gt;Vanilla often refers to pure or plain. So in terms of programming languages, it means either without the use of 3rd party libraries or without the use of frameworks.&lt;/p&gt;
+&lt;p&gt;在计算机编程的范畴中，通常表示不使用第三方库或任何相关的框架平台等。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Computer Science" scheme="http://qpchen.tk/categories/Computer-Science/"/>
+    
+    
+      <category term="Popular Science" scheme="http://qpchen.tk/tags/Popular-Science/"/>
+    
+      <category term="Record" scheme="http://qpchen.tk/tags/Record/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hello World</title>
-    <link href="http://qpchen.tk/2019/01/17/hello-world/"/>
-    <id>http://qpchen.tk/2019/01/17/hello-world/</id>
-    <published>2019-01-17T12:11:01.164Z</published>
+    <link href="http://qpchen.tk/2019/02/25/hello-world/"/>
+    <id>http://qpchen.tk/2019/02/25/hello-world/</id>
+    <published>2019-02-25T03:20:48.473Z</published>
     <updated>2019-01-15T08:48:13.000Z</updated>
     
     <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info    测试中文23jfdsklj尖峰时刻: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><a id="more"></a><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server测试中文23</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><script type="math/tex; mode=display">\begin{equation}  e=mc^2  \end{equation}\label{eq1}</script><p>The famous matter-energy equation $\eqref{eq1}$ proposed by Einstein…</p><script type="math/tex; mode=display">\begin{equation}\begin{aligned}a &= b + c \\  &= d + e + f + g \\  &= h + i\end{aligned}\end{equation}\label{eq2}</script><p>Equation $\eqref{eq2}$ is a multi-line equation.</p><script type="math/tex; mode=display">\begin{align}a &= b + c \label{eq3} \\x &= yz \label{eq4}\\l &= m - n \label{eq5}\end{align}</script><p>There are three aligned equations: equation $\eqref{eq3}$, equation $\eqref{eq4}$ and equation $\eqref{eq5}$.</p><script type="math/tex; mode=display">\begin{align}-4 + 5x &= 2+y \nonumber  \\ w+2 &= -1+w \\ ab &= cb\end{align}</script><script type="math/tex; mode=display">x+1\over\sqrt{1-x^2} \tag{i}\label{eq_tag}</script><p>Equation $\eqref{eq_tag}$ use <code>\tag{}</code> instead of automatic numbering.</p><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a><br><!--stackedit_data:eyJoaXN0b3J5IjpbLTc0MDcwMDYwOF19--></p>]]></content>
