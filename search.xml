@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F02%2F27%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info 测试中文23jfdsklj尖峰时刻: Writing Run server1$ hexo server测试中文23 More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy \begin{equation} e=mc^2 \end{equation}\label{eq1}The famous matter-energy equation $\eqref{eq1}$ proposed by Einstein… \begin{equation} \begin{aligned} a &= b + c \\ &= d + e + f + g \\ &= h + i \end{aligned} \end{equation}\label{eq2}Equation $\eqref{eq2}$ is a multi-line equation. \begin{align} a &= b + c \label{eq3} \\ x &= yz \label{eq4}\\ l &= m - n \label{eq5} \end{align}There are three aligned equations: equation $\eqref{eq3}$, equation $\eqref{eq4}$ and equation $\eqref{eq5}$. \begin{align} -4 + 5x &= 2+y \nonumber \\ w+2 &= -1+w \\ ab &= cb \end{align}x+1\over\sqrt{1-x^2} \tag{i}\label{eq_tag}Equation $\eqref{eq_tag}$ use \tag{} instead of automatic numbering. More info: Deployment]]></content>
+      <tags>
+        <tag>test</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Domain Specific Words]]></title>
     <url>%2F2019%2F02%2F25%2F2019-02-25-Domain-Specific-Words%2F</url>
     <content type="text"><![CDATA[This is a record of normal words in computer science domain. Domain Specific WordsVanilla CodeVanilla often refers to pure or plain. So in terms of programming languages, it means either without the use of 3rd party libraries or without the use of frameworks. 在计算机编程的范畴中，通常表示不使用第三方库或任何相关的框架平台等。]]></content>
@@ -13,11 +21,15 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <url>%2F2019%2F02%2F25%2Fhello-world%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info 测试中文23jfdsklj尖峰时刻: Writing Run server1$ hexo server测试中文23 More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy \begin{equation} e=mc^2 \end{equation}\label{eq1}The famous matter-energy equation $\eqref{eq1}$ proposed by Einstein… \begin{equation} \begin{aligned} a &= b + c \\ &= d + e + f + g \\ &= h + i \end{aligned} \end{equation}\label{eq2}Equation $\eqref{eq2}$ is a multi-line equation. \begin{align} a &= b + c \label{eq3} \\ x &= yz \label{eq4}\\ l &= m - n \label{eq5} \end{align}There are three aligned equations: equation $\eqref{eq3}$, equation $\eqref{eq4}$ and equation $\eqref{eq5}$. \begin{align} -4 + 5x &= 2+y \nonumber \\ w+2 &= -1+w \\ ab &= cb \end{align}x+1\over\sqrt{1-x^2} \tag{i}\label{eq_tag}Equation $\eqref{eq_tag}$ use \tag{} instead of automatic numbering. More info: Deployment]]></content>
+    <title><![CDATA[CGO Compiler]]></title>
+    <url>%2F2019%2F02%2F25%2F2019-02-27-CGO-Compiler%2F</url>
+    <content type="text"><![CDATA[This is a record of reading about working shop on CGO 19’. The workshop included talks from various projects - Julia (Julia Computing), TVM (UW), Glow (Facebook), XLA (Google), nGraph (Intel), TensorRT (Nvidia), and the soon to release MLIR (Google). Workshop on Compilers for Machine Learning (C4ML)Julia: A Compiler to compile Code from Julia to XLA “Getting to Machine Learning from a General Purpose Compiler”, Keno Fischer, Jameson Nash, Julia Computing.Presentation: PDF, Blog 这个编译器的目标是编译Julia代码到TPU平台的XLA代码上，因此编译器的Backend是LLVM。而LLVM是一个静态编译Backend，而Julia语言在语义上是动态语言，因此编译器需要转化原语言中的动态语义到LLVM的静态语义表示。]]></content>
+      <categories>
+        <category>Computer Architecture</category>
+      </categories>
       <tags>
-        <tag>test</tag>
+        <tag>Record</tag>
+        <tag>Compiler</tag>
       </tags>
   </entry>
 </search>

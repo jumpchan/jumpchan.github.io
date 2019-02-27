@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://qpchen.tk/"/>
-  <updated>2019-02-25T03:13:44.000Z</updated>
+  <updated>2019-01-15T08:48:13.000Z</updated>
   <id>http://qpchen.tk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://qpchen.tk/2019/02/27/hello-world/"/>
+    <id>http://qpchen.tk/2019/02/27/hello-world/</id>
+    <published>2019-02-27T08:55:43.409Z</published>
+    <updated>2019-01-15T08:48:13.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info    测试中文23jfdsklj尖峰时刻: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><a id="more"></a><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server测试中文23</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><script type="math/tex; mode=display">\begin{equation}  e=mc^2  \end{equation}\label{eq1}</script><p>The famous matter-energy equation $\eqref{eq1}$ proposed by Einstein…</p><script type="math/tex; mode=display">\begin{equation}\begin{aligned}a &= b + c \\  &= d + e + f + g \\  &= h + i\end{aligned}\end{equation}\label{eq2}</script><p>Equation $\eqref{eq2}$ is a multi-line equation.</p><script type="math/tex; mode=display">\begin{align}a &= b + c \label{eq3} \\x &= yz \label{eq4}\\l &= m - n \label{eq5}\end{align}</script><p>There are three aligned equations: equation $\eqref{eq3}$, equation $\eqref{eq4}$ and equation $\eqref{eq5}$.</p><script type="math/tex; mode=display">\begin{align}-4 + 5x &= 2+y \nonumber  \\ w+2 &= -1+w \\ ab &= cb\end{align}</script><script type="math/tex; mode=display">x+1\over\sqrt{1-x^2} \tag{i}\label{eq_tag}</script><p>Equation $\eqref{eq_tag}$ use <code>\tag{}</code> instead of automatic numbering.</p><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a><br><!--stackedit_data:eyJoaXN0b3J5IjpbLTc0MDcwMDYwOF19--></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info    测试中文23jfdsklj尖峰时刻: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="test" scheme="http://qpchen.tk/tags/test/"/>
+    
+  </entry>
   
   <entry>
     <title>Domain Specific Words</title>
@@ -43,24 +65,26 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://qpchen.tk/2019/02/25/hello-world/"/>
-    <id>http://qpchen.tk/2019/02/25/hello-world/</id>
-    <published>2019-02-25T03:20:48.473Z</published>
-    <updated>2019-01-15T08:48:13.000Z</updated>
+    <title>CGO Compiler</title>
+    <link href="http://qpchen.tk/2019/02/25/2019-02-27-CGO-Compiler/"/>
+    <id>http://qpchen.tk/2019/02/25/2019-02-27-CGO-Compiler/</id>
+    <published>2019-02-25T10:59:34.000Z</published>
+    <updated>2019-02-27T08:53:46.000Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info    测试中文23jfdsklj尖峰时刻: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><a id="more"></a><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server测试中文23</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><script type="math/tex; mode=display">\begin{equation}  e=mc^2  \end{equation}\label{eq1}</script><p>The famous matter-energy equation $\eqref{eq1}$ proposed by Einstein…</p><script type="math/tex; mode=display">\begin{equation}\begin{aligned}a &= b + c \\  &= d + e + f + g \\  &= h + i\end{aligned}\end{equation}\label{eq2}</script><p>Equation $\eqref{eq2}$ is a multi-line equation.</p><script type="math/tex; mode=display">\begin{align}a &= b + c \label{eq3} \\x &= yz \label{eq4}\\l &= m - n \label{eq5}\end{align}</script><p>There are three aligned equations: equation $\eqref{eq3}$, equation $\eqref{eq4}$ and equation $\eqref{eq5}$.</p><script type="math/tex; mode=display">\begin{align}-4 + 5x &= 2+y \nonumber  \\ w+2 &= -1+w \\ ab &= cb\end{align}</script><script type="math/tex; mode=display">x+1\over\sqrt{1-x^2} \tag{i}\label{eq_tag}</script><p>Equation $\eqref{eq_tag}$ use <code>\tag{}</code> instead of automatic numbering.</p><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a><br><!--stackedit_data:eyJoaXN0b3J5IjpbLTc0MDcwMDYwOF19--></p>]]></content>
+    <content type="html"><![CDATA[<p>This is a record of reading about working shop on CGO 19’. The workshop included talks from various projects - Julia (Julia Computing), TVM (UW), Glow (Facebook), XLA (Google), nGraph (Intel), TensorRT (Nvidia), and the soon to release MLIR (Google).</p><a id="more"></a><h1 id="Workshop-on-Compilers-for-Machine-Learning-C4ML"><a href="#Workshop-on-Compilers-for-Machine-Learning-C4ML" class="headerlink" title="Workshop on Compilers for Machine Learning (C4ML)"></a>Workshop on Compilers for Machine Learning (<a href="https://www.c4ml.org/" target="_blank" rel="noopener">C4ML</a>)</h1><h2 id="Julia-A-Compiler-to-compile-Code-from-Julia-to-XLA"><a href="#Julia-A-Compiler-to-compile-Code-from-Julia-to-XLA" class="headerlink" title="Julia: A Compiler to compile Code from Julia to XLA"></a>Julia: A Compiler to compile Code from Julia to XLA</h2><blockquote><p>“Getting to Machine Learning from a General Purpose Compiler”, Keno Fischer, Jameson Nash, <a href="https://juliacomputing.com/communication/publications.html" target="_blank" rel="noopener"><strong>Julia Computing</strong></a>.<br>Presentation: <a href="https://juliacomputing.com/assets/pdf/CGO_C4ML_talk.pdf" target="_blank" rel="noopener">PDF</a>, <a href="https://juliacomputing.com/blog/2019/02/19/growing-a-compiler.html" target="_blank" rel="noopener">Blog</a></p></blockquote><p>这个编译器的目标是编译Julia代码到TPU平台的XLA代码上，因此编译器的Backend是LLVM。而LLVM是一个静态编译Backend，而Julia语言在语义上是动态语言，因此编译器需要转化原语言中的动态语义到LLVM的静态语义表示。</p><hr>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;More info    测试中文23jfdsklj尖峰时刻: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+      &lt;p&gt;This is a record of reading about working shop on CGO 19’. The workshop included talks from various projects - Julia (Julia Computing), TVM (UW), Glow (Facebook), XLA (Google), nGraph (Intel), TensorRT (Nvidia), and the soon to release MLIR (Google).&lt;/p&gt;
     
     </summary>
     
+      <category term="Computer Architecture" scheme="http://qpchen.tk/categories/Computer-Architecture/"/>
     
-      <category term="test" scheme="http://qpchen.tk/tags/test/"/>
+    
+      <category term="Record" scheme="http://qpchen.tk/tags/Record/"/>
+    
+      <category term="Compiler" scheme="http://qpchen.tk/tags/Compiler/"/>
     
   </entry>
   
