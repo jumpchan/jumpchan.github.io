@@ -1,0 +1,22 @@
+---
+title: CGO Compiler
+mathjax: false
+tags: [Compiler, Record]
+categories: [Computer Architecture]
+date: 2019-02-25 10:59:34
+---
+
+This is a record of reading about working shop on CGO 19'. The workshop included talks from various projects - Julia (Julia Computing), TVM (UW), Glow (Facebook), XLA (Google), nGraph (Intel), TensorRT (Nvidia), and the soon to release MLIR (Google).
+
+<!-- more -->
+
+# Workshop on Compilers for Machine Learning ([C4ML](https://www.c4ml.org/))
+
+## Julia: A Compiler to compile Code from Julia to XLA
+
+> "Getting to Machine Learning from a General Purpose Compiler", Keno Fischer, Jameson Nash, [**Julia Computing**](https://juliacomputing.com/communication/publications.html).
+> Presentation: [PDF](https://juliacomputing.com/assets/pdf/CGO_C4ML_talk.pdf), [Blog](https://juliacomputing.com/blog/2019/02/19/growing-a-compiler.html)
+
+这个编译器的目标是编译Julia代码到TPU平台的XLA代码上，因此编译器的Backend是LLVM。而LLVM是一个静态编译Backend，而Julia语言在语义上是动态语言，因此编译器需要转化原语言中的动态语义到LLVM的静态语义表示。
+
+---
