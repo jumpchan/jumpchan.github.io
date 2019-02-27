@@ -3,7 +3,7 @@ title: CGO Compiler
 mathjax: false
 tags: [Compiler, Record]
 categories: [Computer Architecture]
-date: 2019-02-25 10:59:34
+date: 2019-02-27 17:00:00
 ---
 
 This is a record of reading about working shop on CGO 19'. The workshop included talks from various projects - Julia (Julia Computing), TVM (UW), Glow (Facebook), XLA (Google), nGraph (Intel), TensorRT (Nvidia), and the soon to release MLIR (Google).
