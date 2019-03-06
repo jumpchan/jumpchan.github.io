@@ -1,8 +1,8 @@
 ---
 title: Domain Specific Words
 mathjax: false
-tags: [Popular Science, Record]
-categories: [Computer Science]
+tags: [Computer Science, Record]
+categories: [General Concepts]
 date: 2019-02-25 10:59:34
 ---
 
