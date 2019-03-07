@@ -2,7 +2,7 @@
 title: Domain Specific Words
 mathjax: false
 tags: [Computer Science, Record]
-categories: [General Concepts]
+categories: [General Concept]
 date: 2019-02-25 10:59:34
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: about
+comments: false
 date: 2019-01-12 15:47:35
 tags: [Information]
 ---
