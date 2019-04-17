@@ -1,7 +1,7 @@
 ---
 title: {{ title }}
-date: {{ date }}
-mathjax: false
 tags: []
 categories: []
+mathjax: false
+date: {{ date }}
 ---

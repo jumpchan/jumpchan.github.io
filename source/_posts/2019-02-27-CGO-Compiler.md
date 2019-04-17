@@ -6,7 +6,9 @@ categories: [Conference]
 date: 2019-02-27 17:00:00
 ---
 
-This is a record of reading about working shop on CGO 19'. The workshop included talks from various projects - Julia (Julia Computing), TVM (UW), Glow (Facebook), XLA (Google), nGraph (Intel), TensorRT (Nvidia), and the soon to release MLIR (Google).
+International Symposium on Code Generation and Optimization (CGO) 是和International Symposium on High-Performance Computer Architecture (HPCA)，ACM SIGPLAN Symposium on Principles and Practice of Parallel Programming (PPoPP)，International Conference on Compiler Construction (CC)合作的。
+
+This is a record of reading about working shop on CGO 19'. The workshop included talks from various projects - Julia (Julia Computing), TVM (UW), Glow (Facebook), XLA (Google), nGraph (Intel), TensorRT (Nvidia), [xDNN][5] (Xilinx, DeePhi DP(https://www.xilinx.com/products/design-tools/developer-forum.html)U) and the soon to release MLIR (Google).
 
 <!-- more -->
 
@@ -25,3 +27,4 @@ This is a record of reading about working shop on CGO 19'. The workshop included
 [2]: https://juliacomputing.com/communication/publications.html "Julia Computing Publications"
 [3]: https://juliacomputing.com/assets/pdf/CGO_C4ML_talk.pdf "Julia Presentation"
 [4]: https://juliacomputing.com/blog/2019/02/19/growing-a-compiler.html "Julia Blog"
+[5]: https://www.xilinx.com/products/design-tools/developer-forum.html "xDNN Developer Forum"
