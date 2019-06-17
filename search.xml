@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[[Survey] CGRA]]></title>
+    <url>%2F2019%2F06%2F14%2F2019-06-17-Survey-CGRA%2F</url>
+    <content type="text"><![CDATA[摘要计算密集型应用的硬件加速往往通过映射技术将密集计算映射（Mapping）到可重构计算（Reconfigurable Computing, RC）芯片上。而一般而言，应用执行时间主要消耗在少量的循环处。因此，可重构计算芯片上的循环映射优化对于提升计算密集型应用的执行性能具有重要意义。CGRA（Coarse-Grained Reconfigurable Architecture）是一种可重构计算架构，字面翻译为粗粒度可重构处理器。其基础处理单元（Processing Element, PE）为指令级别（Word-Level）的，区别于FPGA（Field Programable Gate Array, 现场可编程门阵列）的门级别，能够直接实现一些典型的逻辑计算。由于CGRA上特殊的硬件结构以及循环程序中语句复杂的依赖关系，CGRA上的循环映射也存在着挑战。 可重构处理器体系结构硬件简介及基本属性组成：PE组成的Array由一个类mesh风格的内部连线连接起来的架构 属性：由于大量的资源因此有高吞吐量而分布式的硬件带来低功耗动态可编程则提供高灵活性 主要参数：大小：PE 数量，一般构成一个正方形的阵列，一般44～88，也有32*32互连形式：crossbar；mesh；mesh plus；morphosys……寄存器共享方式：完全分布式；bus行列分布式；中央寄存器式；混合式PE 功能：同构/异构；ALU功能类型；PE动态功能…… 硬件分类根据程序运行的过程中阵列的电路结构是否改变，分为： 静态可重构：如FPGA 动态可重构：如CGRA 根据阵列互连形式的不同，CGRA主要分为： 一维互连CGRA 二维互连CGRA 可重构处理器编译技术编译对可重构计算的重要性由于可重构处理器和通用处理器的硬件结构有很大的不同，可重构处理器编译器的编译流程和生成的可执行文件都有很大的不同。 通用处理器的编译是将应用程序编译生成单一目标处理器的汇编指令和机器码。 而可重构处理器编译器则首先要对应用程序进行软硬件划分，把应用程序中适合硬件加速的计算密集型部分划分出来。然后针对两部分分别作编译处理，分别生产运行在主控制器控制码和可重构计算阵列上配置信息。 因此，我们所熟知的串行编程模式不能够被直接应用在可重构处理器上。可重构处理器编译是一个极具挑战性的工作。如果没 有易用的编译器，编程人员则需要非常熟悉可重构处理器的底层硬件结构来进行 开发。这将大大降低可重构处理器的通用性。因此，可重构处理器编译器对于可 重构处理器具有极为重要的作用。 CGRA循环映射技术为何要针对循环进行映射优化？ 因为在现代实际生活应用程序中(例如:声音、图像处理等应用)，循环往往占据了这些程序的大部分运行时间。循环的特点是多次重复同一个计算内核（Kernel），不改变运算的结构，只改变运算的数据。2 因此循环映射技术往往是针对从某类应用程序中抽象出的计算内核来进行优化的。 CGRA映射（Mapping）技术根据PE在映射时的功能，可分为两类映射技术： 空间映射：主要针对一维互连架构 时域映射：主要针对二维互连架构 根据可重构计算阵列的运算模式，可分为下列两种情况： 一次配置多次执行：由于少量的配置，可以大大节省配置的开销，从而可以提高性能，降低功耗。 一次配置一次执行：提高来可配置性，但大大降低可重构处理器的执行性能，功耗也会大大增加。 总之，降低配置次数对于提高可重构处 理器的性能是非常有帮助的。 挑战 多层嵌套循环如何处理，以降低内外循环之间交互的开销，同时保证各个循环之间执行顺序的正确性。 由于循环间的数据依赖，如何在限定的空间资源和时序约束中进行合法的布局布线也是一个难点。 选取合适的循环变换可以改变数据依赖的形式，以更好得进行映射，因此如何选择循环变换方法就是一个挑战； 硬件资源有限，如何充分地利用有限的各类硬件资源对于循环映射也是一个挑战： 有限的配置存储资源：如果配置存储资源不够，动态可重构的能力会非常受限。因此，如何在循环映射的时候减少配置代价是一个难点； 稀疏的计算和互连资源：由于芯片面积和功耗的限制，计算阵列的规模一般不大，且阵列中计算单元之间的互连资源一般也比较稀疏； 有限的数据存储资源：主要体现在带宽和存储空间上，由于芯片面积和功耗的限制，阵列中只有某些处理单元能够访问数据存储器； 调度算法布局布线]]></content>
+      <categories>
+        <category>General Concept</category>
+      </categories>
+      <tags>
+        <tag>Survey</tag>
+        <tag>CGRA</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Compiler Overview]]></title>
     <url>%2F2019%2F03%2F06%2F2019-03-06-Compiler-Overview%2F</url>
     <content type="text"><![CDATA[Program Execution 程序执行计算机程序执行过程主要涉及四个部分，包括代码、翻译、中间表示和执行。其中侠义的编译器属于翻译部分，而一个完整的编译系统的执行包含了所有四个部分。 Code 代码代码（Code）是指由计算机程序的形式编码而成的一系列指令集合，它能够由计算机执行。在计算机硬件上运行软件需要两个部分，一个是代码（Code），另一个是数据（Data）。 计算机只能直接执行由指令集中指令构成的机器码（Machine Code）。但不论是机器码还是其他低级程序语言，都不是可以简单阅读的，因此大多源码（Source Code）都是由高级程序语言编写的。而编译器（Compiler）或者解释器（Interpreter）则将源码翻译成计算机可执行的机器语言。一个编译器生成的是目标代码（Object Code），一般来说就是机器语言（Machine Language）构成的，但也包括一些比源码更低级别的中间语言（Intermediate Language）。而解释器则是解释字节码（Bytecode）的工具，字节码是一种比源码低级的代码。 接下来具体说明代码的不同种类。 Source Code任意的使用人类可读的程序语言编写的代码组合都可称为源码（Source Code），它可能包含注释，一般使用富文本表达。源码一般会被汇编器（Assembler）或者编译器（Compiler）翻译成二进制机器码（Binary Machine Code），从而能够直接被计算机理解，这段机器码可能会被存储起来，从而晚一点再执行。除此之外，源码也可能被解释，从而立即执行。 Object Code目标代码（Object Code）是编译器的产物。通常来讲，目标码是一段状态或者指令的序列，它是由一种计算机语言表示的，一般是一种机器码语言或者中间语言，例如RTL (Register Transfer Language)就是一种中间语言。 BytecodeMachine CodeMicrocodeTranslator (Computing)CompilerCompile-timeOptimizing CompilerIntermediate Representation (IR)ExecutionRuntime SystemRuntimeExecutableInterpreterVirtual Machine Compilation StrategiesJust-in-Time (JIT)Tracing Just-in-TimeAhead-of-Time (AOT)TranscompilationRecompilation]]></content>

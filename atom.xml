@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://qpchen.tk/"/>
-  <updated>2019-03-06T14:17:58.000Z</updated>
+  <updated>2019-06-17T10:46:02.000Z</updated>
   <id>http://qpchen.tk/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[Survey] CGRA</title>
+    <link href="http://qpchen.tk/2019/06/14/2019-06-17-Survey-CGRA/"/>
+    <id>http://qpchen.tk/2019/06/14/2019-06-17-Survey-CGRA/</id>
+    <published>2019-06-14T12:15:12.000Z</published>
+    <updated>2019-06-17T10:46:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>计算密集型应用的硬件加速往往通过映射技术将密集计算映射（Mapping）到<a href="https://doi.org/10.1109/JPROC.2014.2386883" title="Tessier, R., Pocek, K., &amp; DeHon, A. (2015). Reconfigurable Computing Architectures. Proceedings of the IEEE, 103(3), 332–354." target="_blank" rel="noopener">可重构计算（Reconfigurable Computing, RC）</a>芯片上。而一般而言，应用执行时间主要消耗在少量的循环处。因此，可重构计算芯片上的循环映射优化对于提升计算密集型应用的执行性能具有重要意义。<br>CGRA（Coarse-Grained Reconfigurable Architecture）是一种可重构计算架构，字面翻译为粗粒度可重构处理器。其基础处理单元（Processing Element, PE）为指令级别（Word-Level）的，区别于FPGA（Field Programable Gate Array, 现场可编程门阵列）的门级别，能够直接实现一些典型的逻辑计算。由于CGRA上特殊的硬件结构以及循环程序中语句复杂的依赖关系，CGRA上的循环映射也存在着挑战。</p><a id="more"></a><h2 id="可重构处理器体系结构"><a href="#可重构处理器体系结构" class="headerlink" title="可重构处理器体系结构"></a>可重构处理器体系结构</h2><h3 id="硬件简介及基本属性"><a href="#硬件简介及基本属性" class="headerlink" title="硬件简介及基本属性"></a>硬件简介及基本属性</h3><p>组成：<br>PE组成的Array由一个类mesh风格的内部连线连接起来的架构</p><p>属性：<br>由于大量的资源因此有高吞吐量<br>而分布式的硬件带来低功耗<br>动态可编程则提供高灵活性</p><p>主要参数：<br>大小：PE 数量，一般构成一个正方形的阵列，一般4<em>4～8</em>8，也有32*32<br>互连形式：crossbar；mesh；mesh plus；morphosys……<br>寄存器共享方式：完全分布式；bus行列分布式；中央寄存器式；混合式<br>PE 功能：同构/异构；ALU功能类型；PE动态功能……</p><h3 id="硬件分类"><a href="#硬件分类" class="headerlink" title="硬件分类"></a>硬件分类</h3><p>根据程序运行的过程中阵列的电路结构是否改变，分为：</p><ul><li>静态可重构：如FPGA</li><li>动态可重构：如CGRA</li></ul><p>根据阵列互连形式的不同，CGRA主要分为：</p><ul><li>一维互连CGRA</li><li>二维互连CGRA</li></ul><h2 id="可重构处理器编译技术"><a href="#可重构处理器编译技术" class="headerlink" title="可重构处理器编译技术"></a><a href="http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CDFD&amp;dbname=CDFDLAST2017&amp;filename=1017800368.nh&amp;v=MDc1MDRHYnU0SHRMS3A1RWJQSVI4ZVgxTHV4WVM3RGgxVDNxVHJXTTFGckNVUkxPZlllZHBGQ3JrVXJ6QlZGMjY=" title="刘大江. 可重构处理器编译系统中循环优化关键技术研究[D].清华大学,2015." target="_blank" rel="noopener">可重构处理器编译技术</a></h2><h3 id="编译对可重构计算的重要性"><a href="#编译对可重构计算的重要性" class="headerlink" title="编译对可重构计算的重要性"></a>编译对可重构计算的重要性</h3><p>由于可重构处理器和通用处理器的硬件结构有很大的不同，可重构处理器编译器的编译流程和生成的可执行文件都有很大的不同。</p><ul><li>通用处理器的编译是将应用程序编译生成单一目标处理器的汇编指令和机器码。</li><li>而可重构处理器编译器则首先要对应用程序进行软硬件划分，把应用程序中适合硬件加速的计算密集型部分划分出来。然后针对两部分分别作编译处理，分别生产运行在主控制器控制码和可重构计算阵列上配置信息。</li></ul><p>因此，我们所熟知的串行编程模式不能够被直接应用在可重构处理器上。可重构处理器编译是一个极具挑战性的工作。如果没 有易用的编译器，编程人员则需要非常熟悉可重构处理器的底层硬件结构来进行 开发。这将大大降低可重构处理器的通用性。因此，可重构处理器编译器对于可 重构处理器具有极为重要的作用。</p><h2 id="CGRA循环映射技术"><a href="#CGRA循环映射技术" class="headerlink" title="CGRA循环映射技术"></a>CGRA循环映射技术</h2><p><strong>为何要针对循环进行映射优化？</strong></p><p>因为在现代实际生活应用程序中(例如:声音、图像处理等应用)，循环往往占据了这些程序的大部分运行时间。循环的特点是多次重复同一个计算内核（Kernel），不改变运算的结构，只改变运算的数据。<a href="http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CDFD&amp;dbname=CDFDLAST2017&amp;filename=1017800368.nh&amp;v=MDc1MDRHYnU0SHRMS3A1RWJQSVI4ZVgxTHV4WVM3RGgxVDNxVHJXTTFGckNVUkxPZlllZHBGQ3JrVXJ6QlZGMjY=" title="刘大江. 可重构处理器编译系统中循环优化关键技术研究[D].清华大学,2015." target="_blank" rel="noopener">2</a></p><p>因此循环映射技术往往是针对从某类应用程序中抽象出的计算内核来进行优化的。</p><h3 id="CGRA映射（Mapping）技术"><a href="#CGRA映射（Mapping）技术" class="headerlink" title="CGRA映射（Mapping）技术"></a>CGRA映射（Mapping）技术</h3><p>根据PE在映射时的功能，可分为两类映射技术：</p><ul><li>空间映射：主要针对一维互连架构</li><li>时域映射：主要针对二维互连架构</li></ul><p>根据可重构计算阵列的<strong>运算模式</strong>，可分为下列两种情况：</p><ul><li>一次配置多次执行：由于少量的配置，可以大大节省配置的开销，从而可以提高性能，降低功耗。</li><li>一次配置一次执行：提高来可配置性，但大大降低可重构处理器的执行性能，功耗也会大大增加。</li></ul><p>总之，降低配置次数对于提高可重构处 理器的性能是非常有帮助的。</p><h4 id="挑战"><a href="#挑战" class="headerlink" title="挑战"></a>挑战</h4><ul><li><strong>多层嵌套</strong>循环如何处理，以降低内外循环之间交互的开销，同时保证各个循环之间执行顺序的正确性。</li><li>由于循环间的<strong>数据依赖</strong>，如何在限定的空间资源和时序约束中进行合法的布局布线也是一个难点。<ul><li>选取合适的循环变换可以改变数据依赖的形式，以更好得进行映射，因此如何选择循环变换方法就是一个挑战；</li><li>硬件资源有限，如何充分地利用有限的各类硬件资源对于循环映射也是一个挑战：<ul><li>有限的配置存储资源：如果配置存储资源不够，动态可重构的能力会非常受限。因此，如何在循环映射的时候减少配置代价是一个难点；</li><li>稀疏的计算和互连资源：由于芯片面积和功耗的限制，计算阵列的规模一般不大，且阵列中计算单元之间的互连资源一般也比较稀疏；</li><li>有限的数据存储资源：主要体现在带宽和存储空间上，由于芯片面积和功耗的限制，阵列中只有某些处理单元能够访问数据存储器；</li></ul></li></ul></li></ul><h3 id="调度算法"><a href="#调度算法" class="headerlink" title="调度算法"></a>调度算法</h3><h3 id="布局布线"><a href="#布局布线" class="headerlink" title="布局布线"></a>布局布线</h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h2&gt;&lt;p&gt;计算密集型应用的硬件加速往往通过映射技术将密集计算映射（Mapping）到&lt;a href=&quot;https://doi.org/10.1109/JPROC.2014.2386883&quot; title=&quot;Tessier, R., Pocek, K., &amp;amp; DeHon, A. (2015). Reconfigurable Computing Architectures. Proceedings of the IEEE, 103(3), 332–354.&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;可重构计算（Reconfigurable Computing, RC）&lt;/a&gt;芯片上。而一般而言，应用执行时间主要消耗在少量的循环处。因此，可重构计算芯片上的循环映射优化对于提升计算密集型应用的执行性能具有重要意义。&lt;br&gt;CGRA（Coarse-Grained Reconfigurable Architecture）是一种可重构计算架构，字面翻译为粗粒度可重构处理器。其基础处理单元（Processing Element, PE）为指令级别（Word-Level）的，区别于FPGA（Field Programable Gate Array, 现场可编程门阵列）的门级别，能够直接实现一些典型的逻辑计算。由于CGRA上特殊的硬件结构以及循环程序中语句复杂的依赖关系，CGRA上的循环映射也存在着挑战。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="General Concept" scheme="http://qpchen.tk/categories/General-Concept/"/>
+    
+    
+      <category term="Survey" scheme="http://qpchen.tk/tags/Survey/"/>
+    
+      <category term="CGRA" scheme="http://qpchen.tk/tags/CGRA/"/>
+    
+  </entry>
   
   <entry>
     <title>Compiler Overview</title>

@@ -108,16 +108,18 @@
 
 
 
-  <meta name="description" content="I am a Ph.D. student at Sun Yat-Sen University, working on deep learning accelerator and compiler systom. Prior to SYSU, I finished my Master and Bachelor&apos;s degree from Chongqing University, and focus">
-<meta property="og:type" content="website">
-<meta property="og:title" content="QP.Chen Talk">
-<meta property="og:url" content="http://qpchen.tk/tags/Computer-Science/index.html">
+  <meta name="description" content="摘要计算密集型应用的硬件加速往往通过映射技术将密集计算映射（Mapping）到可重构计算（Reconfigurable Computing, RC）芯片上。而一般而言，应用执行时间主要消耗在少量的循环处。因此，可重构计算芯片上的循环映射优化对于提升计算密集型应用的执行性能具有重要意义。CGRA（Coarse-Grained Reconfigurable Architecture）是一种可重构计算架">
+<meta name="keywords" content="Survey,CGRA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Survey] CGRA">
+<meta property="og:url" content="http://qpchen.tk/2019/06/14/2019-06-17-Survey-CGRA/index.html">
 <meta property="og:site_name" content="QP.Chen Talk">
-<meta property="og:description" content="I am a Ph.D. student at Sun Yat-Sen University, working on deep learning accelerator and compiler systom. Prior to SYSU, I finished my Master and Bachelor&apos;s degree from Chongqing University, and focus">
+<meta property="og:description" content="摘要计算密集型应用的硬件加速往往通过映射技术将密集计算映射（Mapping）到可重构计算（Reconfigurable Computing, RC）芯片上。而一般而言，应用执行时间主要消耗在少量的循环处。因此，可重构计算芯片上的循环映射优化对于提升计算密集型应用的执行性能具有重要意义。CGRA（Coarse-Grained Reconfigurable Architecture）是一种可重构计算架">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-06-17T10:46:02.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="QP.Chen Talk">
-<meta name="twitter:description" content="I am a Ph.D. student at Sun Yat-Sen University, working on deep learning accelerator and compiler systom. Prior to SYSU, I finished my Master and Bachelor&apos;s degree from Chongqing University, and focus">
+<meta name="twitter:title" content="[Survey] CGRA">
+<meta name="twitter:description" content="摘要计算密集型应用的硬件加速往往通过映射技术将密集计算映射（Mapping）到可重构计算（Reconfigurable Computing, RC）芯片上。而一般而言，应用执行时间主要消耗在少量的循环处。因此，可重构计算芯片上的循环映射优化对于提升计算密集型应用的执行性能具有重要意义。CGRA（Coarse-Grained Reconfigurable Architecture）是一种可重构计算架">
 
 
 
@@ -126,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="http://qpchen.tk/tags/Computer-Science/">
+  <link rel="canonical" href="http://qpchen.tk/2019/06/14/2019-06-17-Survey-CGRA/">
 
 
 
@@ -136,7 +138,7 @@
   };
 </script>
 
-  <title>Tag: Computer Science | QP.Chen Talk</title>
+  <title>[Survey] CGRA | QP.Chen Talk</title>
   
 
 
@@ -184,7 +186,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -222,7 +224,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -370,82 +372,307 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Computer Science<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://qpchen.tk/2019/06/14/2019-06-17-Survey-CGRA/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="QP.Chen">
+      <meta itemprop="description" content="I am a Ph.D. student at Sun Yat-Sen University, working on deep learning accelerator and compiler systom. Prior to SYSU, I finished my Master and Bachelor's degree from Chongqing University, and focused on image caption with neural network.">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QP.Chen Talk">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/2019/02/25/2019-02-25-Domain-Specific-Words/" itemprop="url">
-            
-              <span itemprop="name">Domain Specific Words</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">[Survey] CGRA
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-25T10:59:34+00:00" content="2019-02-25">
-          02-25
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-06-14 12:15:12" itemprop="dateCreated datePublished" datetime="2019-06-14T12:15:12+00:00">2019-06-14</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-06-17 10:46:02" itemprop="dateModified" datetime="2019-06-17T10:46:02+00:00">2019-06-17</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/General-Concept/" itemprop="url" rel="index"><span itemprop="name">General Concept</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/14/2019-06-17-Survey-CGRA/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2019/06/14/2019-06-17-Survey-CGRA/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/06/14/2019-06-17-Survey-CGRA/" class="leancloud_visitors" data-flag-title="[Survey] CGRA">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>计算密集型应用的硬件加速往往通过映射技术将密集计算映射（Mapping）到<a href="https://doi.org/10.1109/JPROC.2014.2386883" title="Tessier, R., Pocek, K., &amp; DeHon, A. (2015). Reconfigurable Computing Architectures. Proceedings of the IEEE, 103(3), 332–354." target="_blank" rel="noopener">可重构计算（Reconfigurable Computing, RC）</a>芯片上。而一般而言，应用执行时间主要消耗在少量的循环处。因此，可重构计算芯片上的循环映射优化对于提升计算密集型应用的执行性能具有重要意义。<br>CGRA（Coarse-Grained Reconfigurable Architecture）是一种可重构计算架构，字面翻译为粗粒度可重构处理器。其基础处理单元（Processing Element, PE）为指令级别（Word-Level）的，区别于FPGA（Field Programable Gate Array, 现场可编程门阵列）的门级别，能够直接实现一些典型的逻辑计算。由于CGRA上特殊的硬件结构以及循环程序中语句复杂的依赖关系，CGRA上的循环映射也存在着挑战。</p>
+<a id="more"></a>
+<h2 id="可重构处理器体系结构"><a href="#可重构处理器体系结构" class="headerlink" title="可重构处理器体系结构"></a>可重构处理器体系结构</h2><h3 id="硬件简介及基本属性"><a href="#硬件简介及基本属性" class="headerlink" title="硬件简介及基本属性"></a>硬件简介及基本属性</h3><p>组成：<br>PE组成的Array由一个类mesh风格的内部连线连接起来的架构</p>
+<p>属性：<br>由于大量的资源因此有高吞吐量<br>而分布式的硬件带来低功耗<br>动态可编程则提供高灵活性</p>
+<p>主要参数：<br>大小：PE 数量，一般构成一个正方形的阵列，一般4<em>4～8</em>8，也有32*32<br>互连形式：crossbar；mesh；mesh plus；morphosys……<br>寄存器共享方式：完全分布式；bus行列分布式；中央寄存器式；混合式<br>PE 功能：同构/异构；ALU功能类型；PE动态功能……</p>
+<h3 id="硬件分类"><a href="#硬件分类" class="headerlink" title="硬件分类"></a>硬件分类</h3><p>根据程序运行的过程中阵列的电路结构是否改变，分为：</p>
+<ul>
+<li>静态可重构：如FPGA</li>
+<li>动态可重构：如CGRA</li>
+</ul>
+<p>根据阵列互连形式的不同，CGRA主要分为：</p>
+<ul>
+<li>一维互连CGRA</li>
+<li>二维互连CGRA</li>
+</ul>
+<h2 id="可重构处理器编译技术"><a href="#可重构处理器编译技术" class="headerlink" title="可重构处理器编译技术"></a><a href="http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CDFD&amp;dbname=CDFDLAST2017&amp;filename=1017800368.nh&amp;v=MDc1MDRHYnU0SHRMS3A1RWJQSVI4ZVgxTHV4WVM3RGgxVDNxVHJXTTFGckNVUkxPZlllZHBGQ3JrVXJ6QlZGMjY=" title="刘大江. 可重构处理器编译系统中循环优化关键技术研究[D].清华大学,2015." target="_blank" rel="noopener">可重构处理器编译技术</a></h2><h3 id="编译对可重构计算的重要性"><a href="#编译对可重构计算的重要性" class="headerlink" title="编译对可重构计算的重要性"></a>编译对可重构计算的重要性</h3><p>由于可重构处理器和通用处理器的硬件结构有很大的不同，可重构处理器编译器的编译流程和生成的可执行文件都有很大的不同。</p>
+<ul>
+<li>通用处理器的编译是将应用程序编译生成单一目标处理器的汇编指令和机器码。</li>
+<li>而可重构处理器编译器则首先要对应用程序进行软硬件划分，把应用程序中适合硬件加速的计算密集型部分划分出来。然后针对两部分分别作编译处理，分别生产运行在主控制器控制码和可重构计算阵列上配置信息。</li>
+</ul>
+<p>因此，我们所熟知的串行编程模式不能够被直接应用在可重构处理器上。可重构处理器编译是一个极具挑战性的工作。如果没 有易用的编译器，编程人员则需要非常熟悉可重构处理器的底层硬件结构来进行 开发。这将大大降低可重构处理器的通用性。因此，可重构处理器编译器对于可 重构处理器具有极为重要的作用。</p>
+<h2 id="CGRA循环映射技术"><a href="#CGRA循环映射技术" class="headerlink" title="CGRA循环映射技术"></a>CGRA循环映射技术</h2><p><strong>为何要针对循环进行映射优化？</strong></p>
+<p>因为在现代实际生活应用程序中(例如:声音、图像处理等应用)，循环往往占据了这些程序的大部分运行时间。循环的特点是多次重复同一个计算内核（Kernel），不改变运算的结构，只改变运算的数据。<a href="http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CDFD&amp;dbname=CDFDLAST2017&amp;filename=1017800368.nh&amp;v=MDc1MDRHYnU0SHRMS3A1RWJQSVI4ZVgxTHV4WVM3RGgxVDNxVHJXTTFGckNVUkxPZlllZHBGQ3JrVXJ6QlZGMjY=" title="刘大江. 可重构处理器编译系统中循环优化关键技术研究[D].清华大学,2015." target="_blank" rel="noopener">2</a></p>
+<p>因此循环映射技术往往是针对从某类应用程序中抽象出的计算内核来进行优化的。</p>
+<h3 id="CGRA映射（Mapping）技术"><a href="#CGRA映射（Mapping）技术" class="headerlink" title="CGRA映射（Mapping）技术"></a>CGRA映射（Mapping）技术</h3><p>根据PE在映射时的功能，可分为两类映射技术：</p>
+<ul>
+<li>空间映射：主要针对一维互连架构</li>
+<li>时域映射：主要针对二维互连架构</li>
+</ul>
+<p>根据可重构计算阵列的<strong>运算模式</strong>，可分为下列两种情况：</p>
+<ul>
+<li>一次配置多次执行：由于少量的配置，可以大大节省配置的开销，从而可以提高性能，降低功耗。</li>
+<li>一次配置一次执行：提高来可配置性，但大大降低可重构处理器的执行性能，功耗也会大大增加。</li>
+</ul>
+<p>总之，降低配置次数对于提高可重构处 理器的性能是非常有帮助的。</p>
+<h4 id="挑战"><a href="#挑战" class="headerlink" title="挑战"></a>挑战</h4><ul>
+<li><strong>多层嵌套</strong>循环如何处理，以降低内外循环之间交互的开销，同时保证各个循环之间执行顺序的正确性。</li>
+<li>由于循环间的<strong>数据依赖</strong>，如何在限定的空间资源和时序约束中进行合法的布局布线也是一个难点。<ul>
+<li>选取合适的循环变换可以改变数据依赖的形式，以更好得进行映射，因此如何选择循环变换方法就是一个挑战；</li>
+<li>硬件资源有限，如何充分地利用有限的各类硬件资源对于循环映射也是一个挑战：<ul>
+<li>有限的配置存储资源：如果配置存储资源不够，动态可重构的能力会非常受限。因此，如何在循环映射的时候减少配置代价是一个难点；</li>
+<li>稀疏的计算和互连资源：由于芯片面积和功耗的限制，计算阵列的规模一般不大，且阵列中计算单元之间的互连资源一般也比较稀疏；</li>
+<li>有限的数据存储资源：主要体现在带宽和存储空间上，由于芯片面积和功耗的限制，阵列中只有某些处理单元能够访问数据存储器；</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="调度算法"><a href="#调度算法" class="headerlink" title="调度算法"></a>调度算法</h3><h3 id="布局布线"><a href="#布局布线" class="headerlink" title="布局布线"></a>布局布线</h3>
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Survey/" rel="tag"># Survey</a>
+          
+            <a href="/tags/CGRA/" rel="tag"># CGRA</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+               <div id="needsharebutton-postbottom">
+                 <span class="btn">
+                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                 </span>
+               </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/06/2019-03-06-Compiler-Overview/" rel="next" title="Compiler Overview">
+                <i class="fa fa-chevron-left"></i> Compiler Overview
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+  </div>
 
 
           </div>
           
+
+  
+    <div id="multi-comments">
+      <div class="comments" id="gitalk-container">
+      </div>
+      <div class="comments" id="comments">
+      </div>
+    </div>
+
+  
+
+
 
 
         </div>
@@ -467,8 +694,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -563,6 +799,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可重构处理器体系结构"><span class="nav-number">2.</span> <span class="nav-text">可重构处理器体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#硬件简介及基本属性"><span class="nav-number">2.1.</span> <span class="nav-text">硬件简介及基本属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#硬件分类"><span class="nav-number">2.2.</span> <span class="nav-text">硬件分类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可重构处理器编译技术"><span class="nav-number">3.</span> <span class="nav-text">可重构处理器编译技术</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编译对可重构计算的重要性"><span class="nav-number">3.1.</span> <span class="nav-text">编译对可重构计算的重要性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CGRA循环映射技术"><span class="nav-number">4.</span> <span class="nav-text">CGRA循环映射技术</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CGRA映射（Mapping）技术"><span class="nav-number">4.1.</span> <span class="nav-text">CGRA映射（Mapping）技术</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#挑战"><span class="nav-number">4.1.1.</span> <span class="nav-text">挑战</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调度算法"><span class="nav-number">4.2.</span> <span class="nav-text">调度算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#布局布线"><span class="nav-number">4.3.</span> <span class="nav-text">布局布线</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -720,6 +973,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=6.7.0"></script>
+<script src="/js/src/post-details.js?v=6.7.0"></script>
+
+
 
   
 
@@ -768,6 +1025,32 @@
   </script>
 
 
+
+
+  
+  
+  <script src="//cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.min.js"></script>
+
+  
+  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.css">
+
+  
+  
+  <script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+
+   <script>
+        var gitalk = new Gitalk({
+          clientID: '4534c8a48cc622f87af4',
+          clientSecret: '279baa5190ce302ca82663033832eea9594b4eae',
+          repo: 'qpchen_tk_comments',
+          owner: 'jumpchan',
+          admin: ['chenqp7'],
+          id: md5(location.pathname),
+          distractionFreeMode: 'true'
+        })
+        gitalk.render('gitalk-container')
+       </script>
 
 
   
