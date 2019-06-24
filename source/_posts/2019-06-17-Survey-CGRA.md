@@ -1,7 +1,7 @@
 ---
 title: '[Survey] CGRA'
-tags: [Survey, CGRA]
-categories: [General Concept]
+tags: [Survey, CGRA, Mapping, Architecture, Scheduling]
+categories: [Reconfigurable Computing]
 mathjax: false
 date: 2019-06-14 12:15:12
 ---
@@ -58,7 +58,7 @@ PE 功能：同构/异构；ALU功能类型；PE动态功能……
 
 **为何要针对循环进行映射优化？**
 
-因为在现代实际生活应用程序中(例如:声音、图像处理等应用)，循环往往占据了这些程序的大部分运行时间。循环的特点是多次重复同一个计算内核（Kernel），不改变运算的结构，只改变运算的数据。[2][2]
+因为在现代实际生活应用程序中(例如:声音、图像处理等应用)，循环往往占据了这些程序的大部分运行时间。循环的特点是多次重复同一个计算内核（Kernel），不改变运算的结构，只改变运算的数据。[\[2\]][2]
 
 因此循环映射技术往往是针对从某类应用程序中抽象出的计算内核来进行优化的。
 
