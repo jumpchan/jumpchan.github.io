@@ -15,7 +15,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -109,14 +109,14 @@
 
 
   <meta name="description" content="摘要计算密集型应用的硬件加速往往通过映射技术将密集计算映射（Mapping）到可重构计算（Reconfigurable Computing, RC）芯片上。而一般而言，应用执行时间主要消耗在少量的循环处。因此，可重构计算芯片上的循环映射优化对于提升计算密集型应用的执行性能具有重要意义。CGRA（Coarse-Grained Reconfigurable Architecture）是一种可重构计算架">
-<meta name="keywords" content="Survey,CGRA">
+<meta name="keywords" content="Survey,CGRA,Mapping,Architecture,Scheduling">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Survey] CGRA">
 <meta property="og:url" content="http://qpchen.tk/2019/06/14/2019-06-17-Survey-CGRA/index.html">
 <meta property="og:site_name" content="QP.Chen Talk">
 <meta property="og:description" content="摘要计算密集型应用的硬件加速往往通过映射技术将密集计算映射（Mapping）到可重构计算（Reconfigurable Computing, RC）芯片上。而一般而言，应用执行时间主要消耗在少量的循环处。因此，可重构计算芯片上的循环映射优化对于提升计算密集型应用的执行性能具有重要意义。CGRA（Coarse-Grained Reconfigurable Architecture）是一种可重构计算架">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-06-17T10:46:02.000Z">
+<meta property="og:updated_time" content="2019-06-24T10:37:04.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Survey] CGRA">
 <meta name="twitter:description" content="摘要计算密集型应用的硬件加速往往通过映射技术将密集计算映射（Mapping）到可重构计算（Reconfigurable Computing, RC）芯片上。而一般而言，应用执行时间主要消耗在少量的循环处。因此，可重构计算芯片上的循环映射优化对于提升计算密集型应用的执行性能具有重要意义。CGRA（Coarse-Grained Reconfigurable Architecture）是一种可重构计算架">
@@ -179,7 +179,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
   
   
@@ -189,7 +189,7 @@
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta">
     
@@ -389,20 +389,20 @@
     <div class="reading-progress-bar"></div>
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://qpchen.tk/2019/06/14/2019-06-17-Survey-CGRA/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="QP.Chen">
       <meta itemprop="description" content="I am a Ph.D. student at Sun Yat-Sen University, working on deep learning accelerator and compiler systom. Prior to SYSU, I finished my Master and Bachelor's degree from Chongqing University, and focused on image caption with neural network.">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="QP.Chen Talk">
     </span>
 
@@ -454,7 +454,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-06-17 10:46:02" itemprop="dateModified" datetime="2019-06-17T10:46:02+00:00">2019-06-17</time>
+                <time title="Modified: 2019-06-24 10:37:04" itemprop="dateModified" datetime="2019-06-24T10:37:04+00:00">2019-06-24</time>
               
             
           </span>
@@ -471,7 +471,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/General-Concept/" itemprop="url" rel="index"><span itemprop="name">General Concept</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Reconfigurable-Computing/" itemprop="url" rel="index"><span itemprop="name">Reconfigurable Computing</span></a></span>
 
                 
                 
@@ -548,7 +548,7 @@
 </ul>
 <p>因此，我们所熟知的串行编程模式不能够被直接应用在可重构处理器上。可重构处理器编译是一个极具挑战性的工作。如果没 有易用的编译器，编程人员则需要非常熟悉可重构处理器的底层硬件结构来进行 开发。这将大大降低可重构处理器的通用性。因此，可重构处理器编译器对于可 重构处理器具有极为重要的作用。</p>
 <h2 id="CGRA循环映射技术"><a href="#CGRA循环映射技术" class="headerlink" title="CGRA循环映射技术"></a>CGRA循环映射技术</h2><p><strong>为何要针对循环进行映射优化？</strong></p>
-<p>因为在现代实际生活应用程序中(例如:声音、图像处理等应用)，循环往往占据了这些程序的大部分运行时间。循环的特点是多次重复同一个计算内核（Kernel），不改变运算的结构，只改变运算的数据。<a href="http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CDFD&amp;dbname=CDFDLAST2017&amp;filename=1017800368.nh&amp;v=MDc1MDRHYnU0SHRMS3A1RWJQSVI4ZVgxTHV4WVM3RGgxVDNxVHJXTTFGckNVUkxPZlllZHBGQ3JrVXJ6QlZGMjY=" title="刘大江. 可重构处理器编译系统中循环优化关键技术研究[D].清华大学,2015." target="_blank" rel="noopener">2</a></p>
+<p>因为在现代实际生活应用程序中(例如:声音、图像处理等应用)，循环往往占据了这些程序的大部分运行时间。循环的特点是多次重复同一个计算内核（Kernel），不改变运算的结构，只改变运算的数据。<a href="http://kns.cnki.net/KCMS/detail/detail.aspx?dbcode=CDFD&amp;dbname=CDFDLAST2017&amp;filename=1017800368.nh&amp;v=MDc1MDRHYnU0SHRMS3A1RWJQSVI4ZVgxTHV4WVM3RGgxVDNxVHJXTTFGckNVUkxPZlllZHBGQ3JrVXJ6QlZGMjY=" title="刘大江. 可重构处理器编译系统中循环优化关键技术研究[D].清华大学,2015." target="_blank" rel="noopener">[2]</a></p>
 <p>因此循环映射技术往往是针对从某类应用程序中抽象出的计算内核来进行优化的。</p>
 <h3 id="CGRA映射（Mapping）技术"><a href="#CGRA映射（Mapping）技术" class="headerlink" title="CGRA映射（Mapping）技术"></a>CGRA映射（Mapping）技术</h3><p>根据PE在映射时的功能，可分为两类映射技术：</p>
 <ul>
@@ -601,6 +601,12 @@
           
             <a href="/tags/CGRA/" rel="tag"># CGRA</a>
           
+            <a href="/tags/Mapping/" rel="tag"># Mapping</a>
+          
+            <a href="/tags/Architecture/" rel="tag"># Architecture</a>
+          
+            <a href="/tags/Scheduling/" rel="tag"># Scheduling</a>
+          
         </div>
       
 
@@ -641,6 +647,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/21/2019-06-24-Paper-Case-Study-for-ADRES/" rel="prev" title="[Paper] Design Methodology for a Tightly Coupled VLIW/Reconfigurable Matrix Architecture: A Case Study">
+                [Paper] Design Methodology for a Tightly Coupled VLIW/Reconfigurable Matrix Architecture: A Case Study <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -706,7 +716,7 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">QP.Chen</p>
               <p class="site-description motion-element" itemprop="description">I am a Ph.D. student at Sun Yat-Sen University, working on deep learning accelerator and compiler systom. Prior to SYSU, I finished my Master and Bachelor's degree from Chongqing University, and focused on image caption with neural network.</p>
@@ -719,7 +729,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -738,7 +748,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -767,7 +779,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>

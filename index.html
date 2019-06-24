@@ -15,7 +15,7 @@
 
 
 <html class="theme-next gemini use-motion" lang="en">
-<head><meta name="generator" content="Hexo 3.8.0">
+<head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
@@ -177,7 +177,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
   
   
@@ -188,7 +188,7 @@
   page-home">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta">
     
@@ -386,20 +386,201 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://qpchen.tk/2019/06/21/2019-06-24-Paper-Case-Study-for-ADRES/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="QP.Chen">
+      <meta itemprop="description" content="I am a Ph.D. student at Sun Yat-Sen University, working on deep learning accelerator and compiler systom. Prior to SYSU, I finished my Master and Bachelor's degree from Chongqing University, and focused on image caption with neural network.">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QP.Chen Talk">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/21/2019-06-24-Paper-Case-Study-for-ADRES/" class="post-title-link" itemprop="url">[Paper] Design Methodology for a Tightly Coupled VLIW/Reconfigurable Matrix Architecture: A Case Study</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-06-21 10:47:44" itemprop="dateCreated datePublished" datetime="2019-06-21T10:47:44+00:00">2019-06-21</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-06-24 10:37:04" itemprop="dateModified" datetime="2019-06-24T10:37:04+00:00">2019-06-24</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/21/2019-06-24-Paper-Case-Study-for-ADRES/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2019/06/21/2019-06-24-Paper-Case-Study-for-ADRES/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/06/21/2019-06-24-Paper-Case-Study-for-ADRES/" class="leancloud_visitors" data-flag-title="[Paper] Design Methodology for a Tightly Coupled VLIW/Reconfigurable Matrix Architecture: A Case Study">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p><a href="https://dl.acm.org/citation.cfm?id=969178" title="[1] Design methodology for a tightly coupled VLIW/reconfigurable matrix architecture: A case study" target="_blank" rel="noopener">该文章</a>发表在2004年DATE会议上。主要工作是基于他们之前提出的模调度算法和对应的VLIW与CGRA紧密集成的新架构，提出的一个针对MPEG-2解码器应用的基于C的设计流案例，以此说明他们的设计方法能够完整映射一个应用到可重构系统中，并取得预期的堪比直接软件开发的性能。需要注意整个应用一般包含决定时间的规则化代码段和大量非规则的控制密集型代码，决定时间的往往是循环。考虑到应用代码的两个部分，一般硬件架构设计成由一个可重构阵列和一个处理器组成的架构（可将循环映射到阵列上加速，而控制密集型代码由处理器执行），处理器往往是一个RISC。其实这样的架构/系统设计是类似于软硬件协同设计问题的。</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/06/21/2019-06-24-Paper-Case-Study-for-ADRES/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://qpchen.tk/2019/06/14/2019-06-17-Survey-CGRA/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="QP.Chen">
       <meta itemprop="description" content="I am a Ph.D. student at Sun Yat-Sen University, working on deep learning accelerator and compiler systom. Prior to SYSU, I finished my Master and Bachelor's degree from Chongqing University, and focused on image caption with neural network.">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="QP.Chen Talk">
     </span>
 
@@ -453,7 +634,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-06-17 10:46:02" itemprop="dateModified" datetime="2019-06-17T10:46:02+00:00">2019-06-17</time>
+                <time title="Modified: 2019-06-24 10:37:04" itemprop="dateModified" datetime="2019-06-24T10:37:04+00:00">2019-06-24</time>
               
             
           </span>
@@ -470,7 +651,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/General-Concept/" itemprop="url" rel="index"><span itemprop="name">General Concept</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Reconfigurable-Computing/" itemprop="url" rel="index"><span itemprop="name">Reconfigurable Computing</span></a></span>
 
                 
                 
@@ -585,20 +766,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://qpchen.tk/2019/03/06/2019-03-06-Compiler-Overview/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="QP.Chen">
       <meta itemprop="description" content="I am a Ph.D. student at Sun Yat-Sen University, working on deep learning accelerator and compiler systom. Prior to SYSU, I finished my Master and Bachelor's degree from Chongqing University, and focused on image caption with neural network.">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="QP.Chen Talk">
     </span>
 
@@ -657,7 +838,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Compiler/" itemprop="url" rel="index"><span itemprop="name">Compiler</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Compiler/" itemprop="url" rel="index"><span itemprop="name">Compiler</span></a></span>
 
                 
                 
@@ -772,20 +953,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://qpchen.tk/2019/02/27/2019-02-27-CGO-Compiler/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="QP.Chen">
       <meta itemprop="description" content="I am a Ph.D. student at Sun Yat-Sen University, working on deep learning accelerator and compiler systom. Prior to SYSU, I finished my Master and Bachelor's degree from Chongqing University, and focused on image caption with neural network.">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="QP.Chen Talk">
     </span>
 
@@ -856,7 +1037,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/Conference/" itemprop="url" rel="index"><span itemprop="name">Conference</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Conference/" itemprop="url" rel="index"><span itemprop="name">Conference</span></a></span>
 
                 
                 
@@ -972,20 +1153,20 @@
 
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://qpchen.tk/2019/02/25/2019-02-25-Domain-Specific-Words/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="QP.Chen">
       <meta itemprop="description" content="I am a Ph.D. student at Sun Yat-Sen University, working on deep learning accelerator and compiler systom. Prior to SYSU, I finished my Master and Bachelor's degree from Chongqing University, and focused on image caption with neural network.">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="QP.Chen Talk">
     </span>
 
@@ -1056,7 +1237,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/General-Concept/" itemprop="url" rel="index"><span itemprop="name">General Concept</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/General-Concept/" itemprop="url" rel="index"><span itemprop="name">General Concept</span></a></span>
 
                 
                 
@@ -1194,7 +1375,7 @@
 
       <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
               <p class="site-author-name" itemprop="name">QP.Chen</p>
               <p class="site-description motion-element" itemprop="description">I am a Ph.D. student at Sun Yat-Sen University, working on deep learning accelerator and compiler systom. Prior to SYSU, I finished my Master and Bachelor's degree from Chongqing University, and focused on image caption with neural network.</p>
@@ -1207,7 +1388,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">4</span>
+                    <span class="site-state-item-count">5</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1226,7 +1407,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -1255,7 +1438,13 @@
                     
                       
                     
-                    <span class="site-state-item-count">7</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -1833,6 +2022,8 @@
 
   
   
+    
+      
     
       
     
