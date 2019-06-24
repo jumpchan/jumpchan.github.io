@@ -2,8 +2,8 @@
 title: >-
   [Paper] Design Methodology for a Tightly Coupled VLIW/Reconfigurable Matrix
   Architecture: A Case Study
-tags: []
-categories: []
+tags: [case study]
+categories: [Reconfigurable Computing]
 mathjax: false
 date: 2019-06-21 10:47:44
 ---
