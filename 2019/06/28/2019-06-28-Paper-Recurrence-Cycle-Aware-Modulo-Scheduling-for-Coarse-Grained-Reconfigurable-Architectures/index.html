@@ -123,7 +123,7 @@
 <meta property="og:image" content="https://qpimg.ml/images/2019/07/01/CGRA-architecture-modification.png">
 <meta property="og:image" content="https://qpimg.ml/images/2019/07/01/Comparison-of-the-scheduling-quality.png">
 <meta property="og:image" content="https://qpimg.ml/images/2019/07/01/Comparison-of-the-compilation-time.png">
-<meta property="og:updated_time" content="2019-07-01T09:52:15.000Z">
+<meta property="og:updated_time" content="2019-07-01T13:37:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Paper] Recurrence Cycle Aware Modulo Scheduling for Coarse-Grained Reconfigurable Architectures">
 <meta name="twitter:description" content="简介该文基于EMS方法，将属于同一个重复环（recurrence cycle）【怎么翻译？】RecMII的操作集中到一个聚合节点（clustered node）上，然后调度这些聚合节点。【这是类似Packing的思路吗？】死锁（Deadlock）会在两个或者更多的recurrence cycle互相依赖时产生【形成环？】。使用启发式方法延长循环时延来解决死锁【具体怎么做的？】。之前的工作需要权衡编">
@@ -462,7 +462,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-01 09:52:15" itemprop="dateModified" datetime="2019-07-01T09:52:15+00:00">2019-07-01</time>
+                <time title="Modified: 2019-07-01 13:37:29" itemprop="dateModified" datetime="2019-07-01T13:37:29+00:00">2019-07-01</time>
               
             
           </span>
@@ -536,6 +536,7 @@
       
         <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>该文基于EMS方法，将属于同一个重复环（recurrence cycle）【怎么翻译？】<sup><a href="#fn_RecMII" id="reffn_RecMII">RecMII</a></sup>的操作集中到一个聚合节点（clustered node）上，然后调度这些聚合节点。【这是类似Packing的思路吗？】<br>死锁（Deadlock）会在两个或者更多的recurrence cycle互相依赖时产生【形成环？】。使用启发式方法延长循环时延来解决死锁【具体怎么做的？】。<br>之前的工作需要权衡编译速度和结果质量，而该文的重复环感知方法则无须做这种权衡。</p>
 <p>本文工作也是实现在他们自己的CGRA芯片和编译器解决方案中的，而调度结果的质量和速度均比基于模拟退火（simulated annealing, SA）的方法好。</p>
+<a id="more"></a>
 <blockquote id="fn_RecMII">
 <sup>RecMII</sup>. 受在当次迭代中仍然需要依赖的上一个迭代中的操作对象（operands）影响，限制II取更小值的限制之一。<a href="#reffn_RecMII" title="Jump back to footnote [RecMII] in the text."> &#8617;</a>
 </blockquote>

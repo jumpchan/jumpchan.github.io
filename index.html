@@ -453,7 +453,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-01 09:52:15" itemprop="dateModified" datetime="2019-07-01T09:52:15+00:00">2019-07-01</time>
+                <time title="Modified: 2019-07-01 13:37:29" itemprop="dateModified" datetime="2019-07-01T13:37:29+00:00">2019-07-01</time>
               
             
           </span>
@@ -526,64 +526,17 @@
 
       
         
-          
-            <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>该文基于EMS方法，将属于同一个重复环（recurrence cycle）【怎么翻译？】<sup><a href="#fn_RecMII" id="reffn_RecMII">RecMII</a></sup>的操作集中到一个聚合节点（clustered node）上，然后调度这些聚合节点。【这是类似Packing的思路吗？】<br>死锁（Deadlock）会在两个或者更多的recurrence cycle互相依赖时产生【形成环？】。使用启发式方法延长循环时延来解决死锁【具体怎么做的？】。<br>之前的工作需要权衡编译速度和结果质量，而该文的重复环感知方法则无须做这种权衡。</p>
+          <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>该文基于EMS方法，将属于同一个重复环（recurrence cycle）【怎么翻译？】<sup><a href="#fn_RecMII" id="reffn_RecMII">RecMII</a></sup>的操作集中到一个聚合节点（clustered node）上，然后调度这些聚合节点。【这是类似Packing的思路吗？】<br>死锁（Deadlock）会在两个或者更多的recurrence cycle互相依赖时产生【形成环？】。使用启发式方法延长循环时延来解决死锁【具体怎么做的？】。<br>之前的工作需要权衡编译速度和结果质量，而该文的重复环感知方法则无须做这种权衡。</p>
 <p>本文工作也是实现在他们自己的CGRA芯片和编译器解决方案中的，而调度结果的质量和速度均比基于模拟退火（simulated annealing, SA）的方法好。</p>
-<blockquote id="fn_RecMII">
-<sup>RecMII</sup>. 受在当次迭代中仍然需要依赖的上一个迭代中的操作对象（operands）影响，限制II取更小值的限制之一。<a href="#reffn_RecMII" title="Jump back to footnote [RecMII] in the text."> &#8617;</a>
-</blockquote>
-<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><ul>
-<li>DRESC编译架构中使用基于模拟退火的模调度<ul>
-<li>先初始化一个调度，此时仅考虑操作依赖，而不考虑资源冲突</li>
-<li>第二步调度器随机在FU之间移动操作，直到发现一个有效的调度</li>
-<li>该方法可以取得较好的结果，但是太耗时</li>
-</ul>
-</li>
-<li>EMS集中在操作对象的布线，而不是操作的布局<ul>
-<li>调度时间大量减少</li>
-<li>但调度质量没有DRESC好</li>
-<li>该文分析质量下降的主要原因是重复环中操作的投机调度</li>
-</ul>
-</li>
-<li>把操作集中起来再布局到FU中，并不是该文首创</li>
-</ul>
-<p>从前人工作中，可以看出其idea一般源于两类方向，</p>
-<ul>
-<li>一类是针对调度单个迭代时产生的问题，<ul>
-<li>有方法层面的，例如增加计算资源利用率，包括：在调度时先集中操作再做布局，最后再布线；还有使用图着色算法等；</li>
-<li>也有硬件层面的，例如在调度中降低内存瓶颈、考虑连线时延等，包括建立操作树；将内部连线的时延和数量加入代价函数（cost function）；</li>
-<li>还有直接设计架构或者针对特定调度方法微调架构等。</li>
-</ul>
-</li>
-<li>另一类则是直接针对模调度算法<ul>
-<li>引入模拟退火作为调度算法，但编译太耗时，耗费甚至可能超过几天的时间；</li>
-<li>在基于SA方法的中实现资源感知的布局方法，一定程度减少时间，但仍旧不能接受；</li>
-<li>使用经典图嵌入方法来映射DFG到硬件三维图表示中；</li>
-<li>以边为中心的模调度（edge- centric modulo scheduling, EMS）框架，集中在数据的操作对象（operands）的布线上，而不是数据的操作方式（operations）；</li>
-</ul>
-</li>
-</ul>
-<h2 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h2><ul>
-<li>一个重复环感知的模调度技术，来移除调度中的非必须限制。</li>
-<li>一个架构的微小改进，来显著提高调度质量。【软硬件协同设计？】</li>
-</ul>
-<h2 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h2><p>EMS可以在局部对每个操作及其操作对象对布局布线产生快速有效对调度，但不能对全局的操作的调度顺序提供一个解决方案。现存EMS是基于操作在DFG中的高度（height）作为顺序的。而如果是调度一个重复环中的操作，则可能未考虑其生产者，先行局部调度。这就在调度中造成了非必须的约束，因为生产者需要与消费者在同一个II周期内，从而导致II的提升，影响调度质量。</p>
-<p>换句话说，一旦一个重复环内的操作被调度，从而固定了调度时刻，则所有周期内的其他操作就被绑定在了该时刻。例如对下图中左边的数据流图映射到右边的架构中的过程进行调度。</p>
-<img src="https://qpimg.ml/images/2019/07/01/example-of-recurrence-cycle-and-simplified-architecture.png" width="500" title="Example of recurrence cycle and simplified architecture">
-<p>按DFG中高度来算优先级的话，会产生如下图的调度过程。没有输入的1，2，4，6是最高优先的，而仅有一个输入边的7也是最优先调度的操作之一。按该顺序开始调度，则会卡在下图的时刻4，因为没有多余的计算资源以供操作9使用。由于7被绑定在时刻3，重复环的时间限制则会要求操作10和11被调度到时刻4和5中。而操作9因为时刻3中没有可用的布线资源，也需要在时刻4中布局，和操作10分配仅剩的一个空余slot。</p>
-<img src="https://qpimg.ml/images/2019/07/01/scheduling-process-is-stuck-by-recurrence-cycle.png" width="500" title="Scheduling process is stuck by recurrence cycle">
-<h2 id="重复环感知的CGRA映射"><a href="#重复环感知的CGRA映射" class="headerlink" title="重复环感知的CGRA映射"></a>重复环感知的CGRA映射</h2><p>该方法的核心是一个智能操作排序策略，考虑重复环之间的关系，从而克服上述问题。</p>
-<p>该方法先把重复环打包到一个聚合节点中，当作DFG中的单个节点。然后把其中的操作一起调度。对上述示例的打包如下图所示。该步骤其实对输入DFG进行了转换，形成了一个无环图，并重新计算高度，而该转换是解决上述问题的核心。</p>
-<img src="https://qpimg.ml/images/2019/07/01/Group-recurrence-cycle.png" width="300" title="Group recurrence cycle">
-<p>这样，重复环的所有生产者操作都会被先行调度，不管环中的操作优先级是不是更高。而当某个重复环代表的聚合节点的所有生产者都被调度后，无视优先级立即对聚合节点进行调度。重复环越早调度越好，因为此时资源尚未被太多占用。上述示例的调度结果如下图所示。</p>
-<img src="https://qpimg.ml/images/2019/07/01/Successful-schedule.png" width="500" title="Successful schedule">
-<h2 id="硬件架构修改"><a href="#硬件架构修改" class="headerlink" title="硬件架构修改"></a>硬件架构修改</h2><p>修改RF的连接方式，如下图所示，从而增加值可传递的范围，增加了可调度的可能性，但也增加了长距离通信的时延，不过从结果看是有好处的。</p>
-<img src="https://qpimg.ml/images/2019/07/01/CGRA-architecture-modification.png" width="300" title="CGRA architecture modification">
-<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><img src="https://qpimg.ml/images/2019/07/01/Comparison-of-the-scheduling-quality.png" width="700" title="Comparison of the scheduling quality">
-<img src="https://qpimg.ml/images/2019/07/01/Comparison-of-the-compilation-time.png" width="700" title="Comparison of the compilation time">
-<!-- Writing Here -->
-
+          <!--noindex-->
           
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/06/28/2019-06-28-Paper-Recurrence-Cycle-Aware-Modulo-Scheduling-for-Coarse-Grained-Reconfigurable-Architectures/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
         
       
     </div>
