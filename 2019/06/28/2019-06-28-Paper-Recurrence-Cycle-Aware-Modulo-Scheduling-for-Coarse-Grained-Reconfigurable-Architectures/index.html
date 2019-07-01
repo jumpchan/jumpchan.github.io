@@ -15,18 +15,18 @@
 
 
 <html class="theme-next gemini use-motion" lang="en">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
-<meta name="theme-color" content="#222"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
 
 
   
   
     
   
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"/>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css">
 
 
 
@@ -50,7 +50,7 @@
   
     
   
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/fancybox@3.0.0/dist/css/jquery.fancybox.min.css"/>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/fancybox@3.0.0/dist/css/jquery.fancybox.min.css">
 
 
 
@@ -58,9 +58,9 @@
 
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2"/>
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2">
 
-<link rel="stylesheet" href="/css/main.css?v=6.7.0"/>
+<link rel="stylesheet" href="/css/main.css?v=6.7.0">
 
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.7.0">
@@ -108,25 +108,35 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="QP.Chen Talk">
-<meta property="og:url" content="http://qpchen.tk/404.html">
+  <meta name="description" content="简介该文基于EMS方法，将属于同一个重复环（recurrence cycle）【怎么翻译？】RecMII的操作集中到一个聚合节点（clustered node）上，然后调度这些聚合节点。【这是类似Packing的思路吗？】死锁（Deadlock）会在两个或者更多的recurrence cycle互相依赖时产生【形成环？】。使用启发式方法延长循环时延来解决死锁【具体怎么做的？】。之前的工作需要权衡编">
+<meta name="keywords" content="Modulo Scheduling">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Paper] Recurrence Cycle Aware Modulo Scheduling for Coarse-Grained Reconfigurable Architectures">
+<meta property="og:url" content="http://qpchen.tk/2019/06/28/2019-06-28-Paper-Recurrence-Cycle-Aware-Modulo-Scheduling-for-Coarse-Grained-Reconfigurable-Architectures/index.html">
 <meta property="og:site_name" content="QP.Chen Talk">
+<meta property="og:description" content="简介该文基于EMS方法，将属于同一个重复环（recurrence cycle）【怎么翻译？】RecMII的操作集中到一个聚合节点（clustered node）上，然后调度这些聚合节点。【这是类似Packing的思路吗？】死锁（Deadlock）会在两个或者更多的recurrence cycle互相依赖时产生【形成环？】。使用启发式方法延长循环时延来解决死锁【具体怎么做的？】。之前的工作需要权衡编">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-01-14T05:03:59.000Z">
+<meta property="og:image" content="https://qpimg.ml/images/2019/07/01/example-of-recurrence-cycle-and-simplified-architecture.png">
+<meta property="og:image" content="https://qpimg.ml/images/2019/07/01/scheduling-process-is-stuck-by-recurrence-cycle.png">
+<meta property="og:image" content="https://qpimg.ml/images/2019/07/01/Group-recurrence-cycle.png">
+<meta property="og:image" content="https://qpimg.ml/images/2019/07/01/Successful-schedule.png">
+<meta property="og:image" content="https://qpimg.ml/images/2019/07/01/CGRA-architecture-modification.png">
+<meta property="og:image" content="https://qpimg.ml/images/2019/07/01/Comparison-of-the-scheduling-quality.png">
+<meta property="og:image" content="https://qpimg.ml/images/2019/07/01/Comparison-of-the-compilation-time.png">
+<meta property="og:updated_time" content="2019-07-01T09:52:15.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="QP.Chen Talk">
-
-
-  
-
-
-  <link rel="alternate" href="/atom.xml" title="QP.Chen Talk" type="application/atom+xml"/>
+<meta name="twitter:title" content="[Paper] Recurrence Cycle Aware Modulo Scheduling for Coarse-Grained Reconfigurable Architectures">
+<meta name="twitter:description" content="简介该文基于EMS方法，将属于同一个重复环（recurrence cycle）【怎么翻译？】RecMII的操作集中到一个聚合节点（clustered node）上，然后调度这些聚合节点。【这是类似Packing的思路吗？】死锁（Deadlock）会在两个或者更多的recurrence cycle互相依赖时产生【形成环？】。使用启发式方法延长循环时延来解决死锁【具体怎么做的？】。之前的工作需要权衡编">
+<meta name="twitter:image" content="https://qpimg.ml/images/2019/07/01/example-of-recurrence-cycle-and-simplified-architecture.png">
 
 
 
+  <link rel="alternate" href="/atom.xml" title="QP.Chen Talk" type="application/atom+xml">
 
-  <link rel="canonical" href="http://qpchen.tk/404.html"/>
+
+
+
+  <link rel="canonical" href="http://qpchen.tk/2019/06/28/2019-06-28-Paper-Recurrence-Cycle-Aware-Modulo-Scheduling-for-Coarse-Grained-Reconfigurable-Architectures/">
 
 
 
@@ -136,7 +146,7 @@
   };
 </script>
 
-  <title> | QP.Chen Talk</title>
+  <title>[Paper] Recurrence Cycle Aware Modulo Scheduling for Coarse-Grained Reconfigurable Architectures | QP.Chen Talk</title>
   
 
 
@@ -232,7 +242,7 @@
 
     
 
-    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br/>Tags</a>
+    <a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>Tags</a>
 
   </li>
         
@@ -249,7 +259,7 @@
 
     
 
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br/>Categories</a>
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
 
   </li>
         
@@ -266,7 +276,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br/>Archives</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
 
   </li>
         
@@ -283,7 +293,7 @@
 
     
 
-    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br/>About</a>
+    <a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>About</a>
 
   </li>
         
@@ -300,7 +310,7 @@
 
     
 
-    <a href="/404/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br/>Commonweal 404</a>
+    <a href="/404/" rel="section"><i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>Commonweal 404</a>
 
   </li>
 
@@ -311,7 +321,7 @@
             <a href="javascript:;" class="popup-trigger">
           
             
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />Search</a>
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
         </li>
       
     </ul>
@@ -331,9 +341,7 @@
       <i class="fa fa-times-circle"></i>
     </span>
     <div class="local-search-input-wrapper">
-      <input autocomplete="off"
-             placeholder="Searching..." spellcheck="false"
-             type="text" id="local-search-input">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
     </div>
   </div>
   <div id="local-search-result"></div>
@@ -362,7 +370,7 @@
 
   
 
-  <a href="https://github.com/qpchen" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+  <a href="https://github.com/qpchen" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewbox="0 0 250 250" style="fill: #222; color: #fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a>
 
 
 
@@ -372,89 +380,295 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://qpchen.tk/2019/06/28/2019-06-28-Paper-Recurrence-Cycle-Aware-Modulo-Scheduling-for-Coarse-Grained-Reconfigurable-Architectures/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="QP.Chen">
+      <meta itemprop="description" content="I am a Ph.D. student at Sun Yat-Sen University, working on deep learning accelerator and compiler systom. Prior to SYSU, I finished my Master and Bachelor's degree from Chongqing University, and focused on image caption with neural network.">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QP.Chen Talk">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h1 class="post-title" itemprop="name headline">
-
-</h1>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <!DOCTYPE HTML>
-<html>
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta http-equiv="content-type" content="text/html;charset=utf-8;">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <meta name="robots" content="all">
-  <meta name="robots" content="index,follow">
-  <link rel="stylesheet" type="text/css" href="https://qzone.qq.com/gy/404/style/404style.css">
-</head>
-<body>
-  <script type="text/plain" src="//qzonestyle.gtimg.cn/qzone/hybrid/app/404/search_children.js" charset="utf-8" homepageurl="/" homepagename="回到我的主页/Back to My HomePage">
-  </script>
-  <script src="https://qzone.qq.com/gy/404/data.js" charset="utf-8"></script>
-  <script src="https://qzone.qq.com/gy/404/page.js" charset="utf-8"></script>
-</body>
-</html>
+          <h1 class="post-title" itemprop="name headline">[Paper] Recurrence Cycle Aware Modulo Scheduling for Coarse-Grained Reconfigurable Architectures
 
+              
+            
+          </h1>
         
-      </div>
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-06-28 10:55:39" itemprop="dateCreated datePublished" datetime="2019-06-28T10:55:39+00:00">2019-06-28</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-07-01 09:52:15" itemprop="dateModified" datetime="2019-07-01T09:52:15+00:00">2019-07-01</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Reconfigurable-Computing/" itemprop="url" rel="index"><span itemprop="name">Reconfigurable Computing</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/28/2019-06-28-Paper-Recurrence-Cycle-Aware-Modulo-Scheduling-for-Coarse-Grained-Reconfigurable-Architectures/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2019/06/28/2019-06-28-Paper-Recurrence-Cycle-Aware-Modulo-Scheduling-for-Coarse-Grained-Reconfigurable-Architectures/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/06/28/2019-06-28-Paper-Recurrence-Cycle-Aware-Modulo-Scheduling-for-Coarse-Grained-Reconfigurable-Architectures/" class="leancloud_visitors" data-flag-title="[Paper] Recurrence Cycle Aware Modulo Scheduling for Coarse-Grained Reconfigurable Architectures">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>该文基于EMS方法，将属于同一个重复环（recurrence cycle）【怎么翻译？】<sup><a href="#fn_RecMII" id="reffn_RecMII">RecMII</a></sup>的操作集中到一个聚合节点（clustered node）上，然后调度这些聚合节点。【这是类似Packing的思路吗？】<br>死锁（Deadlock）会在两个或者更多的recurrence cycle互相依赖时产生【形成环？】。使用启发式方法延长循环时延来解决死锁【具体怎么做的？】。<br>之前的工作需要权衡编译速度和结果质量，而该文的重复环感知方法则无须做这种权衡。</p>
+<p>本文工作也是实现在他们自己的CGRA芯片和编译器解决方案中的，而调度结果的质量和速度均比基于模拟退火（simulated annealing, SA）的方法好。</p>
+<blockquote id="fn_RecMII">
+<sup>RecMII</sup>. 受在当次迭代中仍然需要依赖的上一个迭代中的操作对象（operands）影响，限制II取更小值的限制之一。<a href="#reffn_RecMII" title="Jump back to footnote [RecMII] in the text."> &#8617;</a>
+</blockquote>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><ul>
+<li>DRESC编译架构中使用基于模拟退火的模调度<ul>
+<li>先初始化一个调度，此时仅考虑操作依赖，而不考虑资源冲突</li>
+<li>第二步调度器随机在FU之间移动操作，直到发现一个有效的调度</li>
+<li>该方法可以取得较好的结果，但是太耗时</li>
+</ul>
+</li>
+<li>EMS集中在操作对象的布线，而不是操作的布局<ul>
+<li>调度时间大量减少</li>
+<li>但调度质量没有DRESC好</li>
+<li>该文分析质量下降的主要原因是重复环中操作的投机调度</li>
+</ul>
+</li>
+<li>把操作集中起来再布局到FU中，并不是该文首创</li>
+</ul>
+<p>从前人工作中，可以看出其idea一般源于两类方向，</p>
+<ul>
+<li>一类是针对调度单个迭代时产生的问题，<ul>
+<li>有方法层面的，例如增加计算资源利用率，包括：在调度时先集中操作再做布局，最后再布线；还有使用图着色算法等；</li>
+<li>也有硬件层面的，例如在调度中降低内存瓶颈、考虑连线时延等，包括建立操作树；将内部连线的时延和数量加入代价函数（cost function）；</li>
+<li>还有直接设计架构或者针对特定调度方法微调架构等。</li>
+</ul>
+</li>
+<li>另一类则是直接针对模调度算法<ul>
+<li>引入模拟退火作为调度算法，但编译太耗时，耗费甚至可能超过几天的时间；</li>
+<li>在基于SA方法的中实现资源感知的布局方法，一定程度减少时间，但仍旧不能接受；</li>
+<li>使用经典图嵌入方法来映射DFG到硬件三维图表示中；</li>
+<li>以边为中心的模调度（edge- centric modulo scheduling, EMS）框架，集中在数据的操作对象（operands）的布线上，而不是数据的操作方式（operations）；</li>
+</ul>
+</li>
+</ul>
+<h2 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h2><ul>
+<li>一个重复环感知的模调度技术，来移除调度中的非必须限制。</li>
+<li>一个架构的微小改进，来显著提高调度质量。【软硬件协同设计？】</li>
+</ul>
+<h2 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h2><p>EMS可以在局部对每个操作及其操作对象对布局布线产生快速有效对调度，但不能对全局的操作的调度顺序提供一个解决方案。现存EMS是基于操作在DFG中的高度（height）作为顺序的。而如果是调度一个重复环中的操作，则可能未考虑其生产者，先行局部调度。这就在调度中造成了非必须的约束，因为生产者需要与消费者在同一个II周期内，从而导致II的提升，影响调度质量。</p>
+<p>换句话说，一旦一个重复环内的操作被调度，从而固定了调度时刻，则所有周期内的其他操作就被绑定在了该时刻。例如对下图中左边的数据流图映射到右边的架构中的过程进行调度。</p>
+<img src="https://qpimg.ml/images/2019/07/01/example-of-recurrence-cycle-and-simplified-architecture.png" width="500" title="Example of recurrence cycle and simplified architecture">
+<p>按DFG中高度来算优先级的话，会产生如下图的调度过程。没有输入的1，2，4，6是最高优先的，而仅有一个输入边的7也是最优先调度的操作之一。按该顺序开始调度，则会卡在下图的时刻4，因为没有多余的计算资源以供操作9使用。由于7被绑定在时刻3，重复环的时间限制则会要求操作10和11被调度到时刻4和5中。而操作9因为时刻3中没有可用的布线资源，也需要在时刻4中布局，和操作10分配仅剩的一个空余slot。</p>
+<img src="https://qpimg.ml/images/2019/07/01/scheduling-process-is-stuck-by-recurrence-cycle.png" width="500" title="Scheduling process is stuck by recurrence cycle">
+<h2 id="重复环感知的CGRA映射"><a href="#重复环感知的CGRA映射" class="headerlink" title="重复环感知的CGRA映射"></a>重复环感知的CGRA映射</h2><p>该方法的核心是一个智能操作排序策略，考虑重复环之间的关系，从而克服上述问题。</p>
+<p>该方法先把重复环打包到一个聚合节点中，当作DFG中的单个节点。然后把其中的操作一起调度。对上述示例的打包如下图所示。该步骤其实对输入DFG进行了转换，形成了一个无环图，并重新计算高度，而该转换是解决上述问题的核心。</p>
+<img src="https://qpimg.ml/images/2019/07/01/Group-recurrence-cycle.png" width="300" title="Group recurrence cycle">
+<p>这样，重复环的所有生产者操作都会被先行调度，不管环中的操作优先级是不是更高。而当某个重复环代表的聚合节点的所有生产者都被调度后，无视优先级立即对聚合节点进行调度。重复环越早调度越好，因为此时资源尚未被太多占用。上述示例的调度结果如下图所示。</p>
+<img src="https://qpimg.ml/images/2019/07/01/Successful-schedule.png" width="500" title="Successful schedule">
+<h2 id="硬件架构修改"><a href="#硬件架构修改" class="headerlink" title="硬件架构修改"></a>硬件架构修改</h2><p>修改RF的连接方式，如下图所示，从而增加值可传递的范围，增加了可调度的可能性，但也增加了长距离通信的时延，不过从结果看是有好处的。</p>
+<img src="https://qpimg.ml/images/2019/07/01/CGRA-architecture-modification.png" width="300" title="CGRA architecture modification">
+<h2 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h2><img src="https://qpimg.ml/images/2019/07/01/Comparison-of-the-scheduling-quality.png" width="700" title="Comparison of the scheduling quality">
+<img src="https://qpimg.ml/images/2019/07/01/Comparison-of-the-compilation-time.png" width="700" title="Comparison of the compilation time">
+<!-- Writing Here -->
+
       
     </div>
-    
-
-
 
     
+
     
     
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Modulo-Scheduling/" rel="tag"># Modulo Scheduling</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+               <div id="needsharebutton-postbottom">
+                 <span class="btn">
+                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                 </span>
+               </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/21/2019-06-24-Paper-Case-Study-for-ADRES/" rel="next" title="[Paper] Design Methodology for a Tightly Coupled VLIW/Reconfigurable Matrix Architecture: A Case Study">
+                <i class="fa fa-chevron-left"></i> [Paper] Design Methodology for a Tightly Coupled VLIW/Reconfigurable Matrix Architecture: A Case Study
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
   </div>
 
 
@@ -493,8 +707,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -606,6 +829,23 @@
       </div>
 
       
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相关工作"><span class="nav-number">2.</span> <span class="nav-text">相关工作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#贡献"><span class="nav-number">3.</span> <span class="nav-text">贡献</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动机"><span class="nav-number">4.</span> <span class="nav-text">动机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重复环感知的CGRA映射"><span class="nav-number">5.</span> <span class="nav-text">重复环感知的CGRA映射</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#硬件架构修改"><span class="nav-number">6.</span> <span class="nav-text">硬件架构修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实验结果"><span class="nav-number">7.</span> <span class="nav-text">实验结果</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
 
       
 
@@ -704,7 +944,7 @@
       
     
   
-  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js"></script>
+  <script color="0,0,255" opacity="0.5" zindex="-1" count="99" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-nest@1/canvas-nest.min.js"></script>
 
 
 
@@ -822,7 +1062,7 @@
 
   
   
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.css"/>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1.4.0/dist/gitalk.css">
 
   
   
