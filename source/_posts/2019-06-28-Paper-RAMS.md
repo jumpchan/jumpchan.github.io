@@ -1,8 +1,8 @@
 ---
 title: >-
-  [Paper] Recurrence Cycle Aware Modulo Scheduling for Coarse-Grained
+  [Paper] (RAMS) Recurrence Cycle Aware Modulo Scheduling for Coarse-Grained
   Reconfigurable Architectures
-tags: [Modulo Scheduling]
+tags: [Modulo Scheduling, CGRA, EMS, Recurrence Cycle, Architecture]
 categories: [Reconfigurable Computing]
 mathjax: false
 date: 2019-06-28 10:55:39
@@ -85,3 +85,8 @@ EMS可以在局部对每个操作及其操作对象对布局布线产生快速�
 {% img https://qpimg.ml/images/2019/07/01/Comparison-of-the-compilation-time.png 700 Comparison of the compilation time %}
 
 <!-- Writing Here -->
+## Reference
+
+> [1] Oh, Taewook, Bernhard Egger, Hyunchul Park, and Scott Mahlke. "Recurrence cycle aware modulo scheduling for coarse-grained reconfigurable architectures." In Proceedings of the 2009 ACM SIGPLAN/SIGBED conference on Languages, compilers, and tools for embedded systems (LCTES '09), pp. 21-30. ACM, 2009. (Sites: [ACM][self]) [Back](#简介)
+
+[self]: https://dl.acm.org/citation.cfm?id=1542456 "[1] Recurrence Cycle Aware Modulo Scheduling for Coarse-Grained Reconfigurable Architectures"
