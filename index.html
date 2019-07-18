@@ -391,7 +391,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://qpchen.tk/2019/06/28/2019-06-28-Paper-Recurrence-Cycle-Aware-Modulo-Scheduling-for-Coarse-Grained-Reconfigurable-Architectures/">
+    <link itemprop="mainEntityOfPage" href="http://qpchen.tk/2019/07/18/2019-07-18-Paper-DNestMap/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="QP.Chen">
@@ -411,7 +411,791 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/06/28/2019-06-28-Paper-Recurrence-Cycle-Aware-Modulo-Scheduling-for-Coarse-Grained-Reconfigurable-Architectures/" class="post-title-link" itemprop="url">[Paper] Recurrence Cycle Aware Modulo Scheduling for Coarse-Grained Reconfigurable Architectures</a>
+                <a href="/2019/07/18/2019-07-18-Paper-DNestMap/" class="post-title-link" itemprop="url">[Paper] DNestMap: Mapping Deeply-Nested Loops on Ultra-Low Power CGRAs</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-18 21:56:43 / Modified: 15:07:26" itemprop="dateCreated datePublished" datetime="2019-07-18T21:56:43+00:00">2019-07-18</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Reconfigurable-Computing/" itemprop="url" rel="index"><span itemprop="name">Reconfigurable Computing</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/18/2019-07-18-Paper-DNestMap/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2019/07/18/2019-07-18-Paper-DNestMap/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/07/18/2019-07-18-Paper-DNestMap/" class="leancloud_visitors" data-flag-title="[Paper] DNestMap: Mapping Deeply-Nested Loops on Ultra-Low Power CGRAs">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>该文针对极低功耗CGRA中配置内存受限（很小）的情况，提出一个映射方法，映射包含深度嵌套循环和非规则控制流结构的应用。<br>该方法将应用和CGRA进行划分（partitioning），从多个嵌套循环中提取出最合适的代码块做映射，从而有效地通过时空（spatio-temporal）划分静态缓存这些划分后的代码块配置信息到配置内存中，以较少的启动间隔（II）代价，获得较多的配置内存加载时间降低，从而加快整体执行时间。</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/18/2019-07-18-Paper-DNestMap/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://qpchen.tk/2019/07/17/2019-07-17-Paper-Physical-Implementation-of-CGRA-ME/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="QP.Chen">
+      <meta itemprop="description" content="I am a Ph.D. student at Sun Yat-Sen University, working on deep learning accelerator and compiler systom. Prior to SYSU, I finished my Master and Bachelor's degree from Chongqing University, and focused on image caption with neural network.">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QP.Chen Talk">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/17/2019-07-17-Paper-Physical-Implementation-of-CGRA-ME/" class="post-title-link" itemprop="url">[Paper] Architecture Exploration of Standard-Cell and FPGA-Overlay CGRAs Using the Open-Source CGRA-ME Framework</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-17 22:40:03" itemprop="dateCreated datePublished" datetime="2019-07-17T22:40:03+00:00">2019-07-17</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-07-18 15:07:26" itemprop="dateModified" datetime="2019-07-18T15:07:26+00:00">2019-07-18</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Reconfigurable-Computing/" itemprop="url" rel="index"><span itemprop="name">Reconfigurable Computing</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/17/2019-07-17-Paper-Physical-Implementation-of-CGRA-ME/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2019/07/17/2019-07-17-Paper-Physical-Implementation-of-CGRA-ME/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/07/17/2019-07-17-Paper-Physical-Implementation-of-CGRA-ME/" class="leancloud_visitors" data-flag-title="[Paper] Architecture Exploration of Standard-Cell and FPGA-Overlay CGRAs Using the Open-Source CGRA-ME Framework">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Jason Anderson组CGRA-ME发布的首篇论文中，介绍其物理实现功能时，在ASIC上实现了Standard Cell CGRA。而该文则是继CGRA-ME发布后，扩充其物理实现功能，在FPGA上实现FPGA Overlay CGRA，并探索CGRA-ME如何在同一平台上比较CGRA的不同物理实现的性能、质量、能耗等指标。</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/17/2019-07-17-Paper-Physical-Implementation-of-CGRA-ME/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://qpchen.tk/2019/07/16/2019-07-16-Paper-RAMP/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="QP.Chen">
+      <meta itemprop="description" content="I am a Ph.D. student at Sun Yat-Sen University, working on deep learning accelerator and compiler systom. Prior to SYSU, I finished my Master and Bachelor's degree from Chongqing University, and focused on image caption with neural network.">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QP.Chen Talk">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/16/2019-07-16-Paper-RAMP/" class="post-title-link" itemprop="url">[Paper] RAMP: Resource-Aware Mapping for CGRAs</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-16 09:58:59" itemprop="dateCreated datePublished" datetime="2019-07-16T09:58:59+00:00">2019-07-16</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-07-18 15:07:26" itemprop="dateModified" datetime="2019-07-18T15:07:26+00:00">2019-07-18</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Reconfigurable-Computing/" itemprop="url" rel="index"><span itemprop="name">Reconfigurable Computing</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/16/2019-07-16-Paper-RAMP/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2019/07/16/2019-07-16-Paper-RAMP/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/07/16/2019-07-16-Paper-RAMP/" class="leancloud_visitors" data-flag-title="[Paper] RAMP: Resource-Aware Mapping for CGRAs">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>针对当前映射操作依赖到布线资源的策略，都是在调度后阶段，即P&amp;R（Placement and Routing）阶段内调整布线方法，而没有重新调度全图，导致不能映射成功或者质量低下。<br>该文则提出在调度前针对三类未能映射的失败情况，在多个备选布线策略中进行选择，再依据新策略重新调度DDG，最后P&amp;R。成功在映射质量、可映射数量以及求解速度方面得到全面提升。</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/16/2019-07-16-Paper-RAMP/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://qpchen.tk/2019/07/13/2019-07-13-Paper-CGRA-Express/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="QP.Chen">
+      <meta itemprop="description" content="I am a Ph.D. student at Sun Yat-Sen University, working on deep learning accelerator and compiler systom. Prior to SYSU, I finished my Master and Bachelor's degree from Chongqing University, and focused on image caption with neural network.">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QP.Chen Talk">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/07/13/2019-07-13-Paper-CGRA-Express/" class="post-title-link" itemprop="url">[Paper] CGRA Express: Accelerating Execution using Dynamic Operation Fusion</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-13 21:06:36" itemprop="dateCreated datePublished" datetime="2019-07-13T21:06:36+00:00">2019-07-13</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-07-18 15:07:26" itemprop="dateModified" datetime="2019-07-18T15:07:26+00:00">2019-07-18</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Reconfigurable-Computing/" itemprop="url" rel="index"><span itemprop="name">Reconfigurable Computing</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/07/13/2019-07-13-Paper-CGRA-Express/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2019/07/13/2019-07-13-Paper-CGRA-Express/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/07/13/2019-07-13-Paper-CGRA-Express/" class="leancloud_visitors" data-flag-title="[Paper] CGRA Express: Accelerating Execution using Dynamic Operation Fusion">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>CGRA硬件是一组FU由某种风格的稀疏网络连接，并提供分布式寄存器组。FU提供通用整数操作，包括加减乘。相对于FPGA，其特性是提供门级别的可编程性，因此重构时间较短，且时延和能耗也较少。<br>因为CGRA可编程，对应的有效编译系统则很重要。编译的主要挑战是指令调度。其调度的挑战则是稀疏的网络连接和分布式的寄存器组。CGRA上没有专用的布线资源，而是由FU在某个给定时刻被选择实现计算或者布线资源二者之一的功能。<br>CGRA编译器大多集中在映射计算密集型最内层循环到计算阵列上。但对于latency-constrained code并不删除处理，包括非循环、外层循环和形成环的内层循环的代码。</p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2019/07/13/2019-07-13-Paper-CGRA-Express/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://qpchen.tk/2019/06/28/2019-06-28-Paper-RAMS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="QP.Chen">
+      <meta itemprop="description" content="I am a Ph.D. student at Sun Yat-Sen University, working on deep learning accelerator and compiler systom. Prior to SYSU, I finished my Master and Bachelor's degree from Chongqing University, and focused on image caption with neural network.">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="QP.Chen Talk">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/06/28/2019-06-28-Paper-RAMS/" class="post-title-link" itemprop="url">[Paper] (RAMS) Recurrence Cycle Aware Modulo Scheduling for Coarse-Grained Reconfigurable Architectures</a>
               
             
           </h1>
@@ -453,7 +1237,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-01 13:37:29" itemprop="dateModified" datetime="2019-07-01T13:37:29+00:00">2019-07-01</time>
+                <time title="Modified: 2019-07-18 15:07:26" itemprop="dateModified" datetime="2019-07-18T15:07:26+00:00">2019-07-18</time>
               
             
           </span>
@@ -485,8 +1269,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/06/28/2019-06-28-Paper-Recurrence-Cycle-Aware-Modulo-Scheduling-for-Coarse-Grained-Reconfigurable-Architectures/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2019/06/28/2019-06-28-Paper-Recurrence-Cycle-Aware-Modulo-Scheduling-for-Coarse-Grained-Reconfigurable-Architectures/" itemprop="commentCount"></span>
+                <a href="/2019/06/28/2019-06-28-Paper-RAMS/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">Comments: </span> <span class="post-comments-count valine-comment-count" data-xid="/2019/06/28/2019-06-28-Paper-RAMS/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -494,7 +1278,7 @@
 
           
           
-             <span id="/2019/06/28/2019-06-28-Paper-Recurrence-Cycle-Aware-Modulo-Scheduling-for-Coarse-Grained-Reconfigurable-Architectures/" class="leancloud_visitors" data-flag-title="[Paper] Recurrence Cycle Aware Modulo Scheduling for Coarse-Grained Reconfigurable Architectures">
+             <span id="/2019/06/28/2019-06-28-Paper-RAMS/" class="leancloud_visitors" data-flag-title="[Paper] (RAMS) Recurrence Cycle Aware Modulo Scheduling for Coarse-Grained Reconfigurable Architectures">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -531,7 +1315,7 @@
           <!--noindex-->
           
             <div class="post-button text-center">
-              <a class="btn" href="/2019/06/28/2019-06-28-Paper-Recurrence-Cycle-Aware-Modulo-Scheduling-for-Coarse-Grained-Reconfigurable-Architectures/#more" rel="contents">
+              <a class="btn" href="/2019/06/28/2019-06-28-Paper-RAMS/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -653,7 +1437,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-07-01 09:52:15" itemprop="dateModified" datetime="2019-07-01T09:52:15+00:00">2019-07-01</time>
+                <time title="Modified: 2019-07-18 15:07:26" itemprop="dateModified" datetime="2019-07-18T15:07:26+00:00">2019-07-18</time>
               
             
           </span>
@@ -1606,7 +2390,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1670,7 +2454,37 @@
                     
                       
                     
-                    <span class="site-state-item-count">14</span>
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">28</span>
                     <span class="site-state-item-name">tags</span>
                   </a>
                 </div>
@@ -2252,6 +3066,16 @@
       
     
       
+        
+      
+    
+      
+    
+      
+    
+      
+    
+      
     
       
     
@@ -2263,6 +3087,43 @@
     
   
 
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: "AMS"
+      }
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+      for (i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+<style>
+.MathJax_Display {
+  overflow: auto hidden;
+}
+</style>
+
+    
   
 
 

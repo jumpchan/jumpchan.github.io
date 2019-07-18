@@ -1,14 +1,75 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[[Paper] Recurrence Cycle Aware Modulo Scheduling for Coarse-Grained Reconfigurable Architectures]]></title>
-    <url>%2F2019%2F06%2F28%2F2019-06-28-Paper-Recurrence-Cycle-Aware-Modulo-Scheduling-for-Coarse-Grained-Reconfigurable-Architectures%2F</url>
-    <content type="text"><![CDATA[简介该文基于EMS方法，将属于同一个重复环（recurrence cycle）【怎么翻译？】RecMII的操作集中到一个聚合节点（clustered node）上，然后调度这些聚合节点。【这是类似Packing的思路吗？】死锁（Deadlock）会在两个或者更多的recurrence cycle互相依赖时产生【形成环？】。使用启发式方法延长循环时延来解决死锁【具体怎么做的？】。之前的工作需要权衡编译速度和结果质量，而该文的重复环感知方法则无须做这种权衡。 本文工作也是实现在他们自己的CGRA芯片和编译器解决方案中的，而调度结果的质量和速度均比基于模拟退火（simulated annealing, SA）的方法好。 RecMII. 受在当次迭代中仍然需要依赖的上一个迭代中的操作对象（operands）影响，限制II取更小值的限制之一。 &#8617; 相关工作 DRESC编译架构中使用基于模拟退火的模调度 先初始化一个调度，此时仅考虑操作依赖，而不考虑资源冲突 第二步调度器随机在FU之间移动操作，直到发现一个有效的调度 该方法可以取得较好的结果，但是太耗时 EMS集中在操作对象的布线，而不是操作的布局 调度时间大量减少 但调度质量没有DRESC好 该文分析质量下降的主要原因是重复环中操作的投机调度 把操作集中起来再布局到FU中，并不是该文首创 从前人工作中，可以看出其idea一般源于两类方向， 一类是针对调度单个迭代时产生的问题， 有方法层面的，例如增加计算资源利用率，包括：在调度时先集中操作再做布局，最后再布线；还有使用图着色算法等； 也有硬件层面的，例如在调度中降低内存瓶颈、考虑连线时延等，包括建立操作树；将内部连线的时延和数量加入代价函数（cost function）； 还有直接设计架构或者针对特定调度方法微调架构等。 另一类则是直接针对模调度算法 引入模拟退火作为调度算法，但编译太耗时，耗费甚至可能超过几天的时间； 在基于SA方法的中实现资源感知的布局方法，一定程度减少时间，但仍旧不能接受； 使用经典图嵌入方法来映射DFG到硬件三维图表示中； 以边为中心的模调度（edge- centric modulo scheduling, EMS）框架，集中在数据的操作对象（operands）的布线上，而不是数据的操作方式（operations）； 贡献 一个重复环感知的模调度技术，来移除调度中的非必须限制。 一个架构的微小改进，来显著提高调度质量。【软硬件协同设计？】 动机EMS可以在局部对每个操作及其操作对象对布局布线产生快速有效对调度，但不能对全局的操作的调度顺序提供一个解决方案。现存EMS是基于操作在DFG中的高度（height）作为顺序的。而如果是调度一个重复环中的操作，则可能未考虑其生产者，先行局部调度。这就在调度中造成了非必须的约束，因为生产者需要与消费者在同一个II周期内，从而导致II的提升，影响调度质量。 换句话说，一旦一个重复环内的操作被调度，从而固定了调度时刻，则所有周期内的其他操作就被绑定在了该时刻。例如对下图中左边的数据流图映射到右边的架构中的过程进行调度。 按DFG中高度来算优先级的话，会产生如下图的调度过程。没有输入的1，2，4，6是最高优先的，而仅有一个输入边的7也是最优先调度的操作之一。按该顺序开始调度，则会卡在下图的时刻4，因为没有多余的计算资源以供操作9使用。由于7被绑定在时刻3，重复环的时间限制则会要求操作10和11被调度到时刻4和5中。而操作9因为时刻3中没有可用的布线资源，也需要在时刻4中布局，和操作10分配仅剩的一个空余slot。 重复环感知的CGRA映射该方法的核心是一个智能操作排序策略，考虑重复环之间的关系，从而克服上述问题。 该方法先把重复环打包到一个聚合节点中，当作DFG中的单个节点。然后把其中的操作一起调度。对上述示例的打包如下图所示。该步骤其实对输入DFG进行了转换，形成了一个无环图，并重新计算高度，而该转换是解决上述问题的核心。 这样，重复环的所有生产者操作都会被先行调度，不管环中的操作优先级是不是更高。而当某个重复环代表的聚合节点的所有生产者都被调度后，无视优先级立即对聚合节点进行调度。重复环越早调度越好，因为此时资源尚未被太多占用。上述示例的调度结果如下图所示。 硬件架构修改修改RF的连接方式，如下图所示，从而增加值可传递的范围，增加了可调度的可能性，但也增加了长距离通信的时延，不过从结果看是有好处的。 实验结果]]></content>
+    <title><![CDATA[[Paper] DNestMap: Mapping Deeply-Nested Loops on Ultra-Low Power CGRAs]]></title>
+    <url>%2F2019%2F07%2F18%2F2019-07-18-Paper-DNestMap%2F</url>
+    <content type="text"><![CDATA[简介该文针对极低功耗CGRA中配置内存受限（很小）的情况，提出一个映射方法，映射包含深度嵌套循环和非规则控制流结构的应用。该方法将应用和CGRA进行划分（partitioning），从多个嵌套循环中提取出最合适的代码块做映射，从而有效地通过时空（spatio-temporal）划分静态缓存这些划分后的代码块配置信息到配置内存中，以较少的启动间隔（II）代价，获得较多的配置内存加载时间降低，从而加快整体执行时间。 团队新加坡国立大学的工作，从2017年DAC上的HyCUBE硬件架构，到2018年DAC上该论文关于映射深度嵌套循环到极低功耗CGRA上的工作。 相关工作 关于解决CMEM限制问题，有将配置内存当作缓存（cache），从时间上动态缓存配置信息的几种工作。 包括cache prefetching、配置信息管理策略优化和多面体配置等工作； 关于该文方法的各个步骤的解决方法，涉及如下几种技术： 三维正交背包问题（3D orthogonal knapsack, 3D-OKP） 操作（Operation）的Packing Class抽象 三维正交Packing问题(Orthogonal Packing Problem of 3-Dimension, OPP-3D) 分支界限搜索（branch-and-bound search, B&amp;B search） 贡献和动机大多数应用包含嵌套循环，而当前大部分映射方法仅针对最内层循环，未考虑应用程序中复杂嵌套循环以及非规则控制流的部分如何映射。当映射该部分源码时，会对配置内存（Configuration Memory, CMEM）产生容量要求。针对超低功耗CGRA中CMEM极小时，嵌套循环用传统映射方法则会从片外内存频繁读取配置信息，在片上CMEM产生交换（swap）代价。 方法【相关工作中的各个步骤的解决技术，需要进一步了解，以深入该文到底如何设计时空配置信息缓存方法的】 实验总结待商讨问题 针对MU到PE块的映射，用ILP求得局部最优解（此时尺寸都很小，求解应该很快），再做PEA划分等问题，能否提高质量？ 既然整个运行时间包含很多breakdown的部分，能否用一种综合打分的机制，统一评价映射方法以及架构设计的好坏？ Reference [1] $Reference (Sites: $Publisher) Back]]></content>
       <categories>
         <category>Reconfigurable Computing</category>
       </categories>
       <tags>
+        <tag>CGRA</tag>
+        <tag>Configuration Memory</tag>
+        <tag>Nested Loop</tag>
+        <tag>Cache</tag>
+        <tag>Partitioning</tag>
+        <tag>Packing</tag>
+        <tag>HyCUBE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[[Paper] Architecture Exploration of Standard-Cell and FPGA-Overlay CGRAs Using the Open-Source CGRA-ME Framework]]></title>
+    <url>%2F2019%2F07%2F17%2F2019-07-17-Paper-Physical-Implementation-of-CGRA-ME%2F</url>
+    <content type="text"><![CDATA[简介Jason Anderson组CGRA-ME发布的首篇论文中，介绍其物理实现功能时，在ASIC上实现了Standard Cell CGRA。而该文则是继CGRA-ME发布后，扩充其物理实现功能，在FPGA上实现FPGA Overlay CGRA，并探索CGRA-ME如何在同一平台上比较CGRA的不同物理实现的性能、质量、能耗等指标。 团队多伦多大学ECE部门的Jason H. Anderson组。 相关工作针对CGRA-ME的三大功能：架构建模、应用映射和物理实现，分别有如下三种相关工作： CGADL建模语言，能描述CGRA架构，但没有实现应用的映射以及RTL输出； DRESC、SPR等映射系统，但没有集成到架构建模框架中； 各个硬件架构的物理实现工具也有很多工作，但都没有整合到一个大的统一框架中，以至于很难直接互相比较。 背景OverlayOverlay本身是网络的虚拟化技术，用在FPGA上则是虚拟平台，简而言之其框架如下三个部分： 应用：用HDL、C等实现的应用程序 通过overlay mapping映射到虚拟平台 Overlay：用CGRA等设计的虚拟平台 通过物理映射和配置等映射到底层硬件上 FPGA：包括LUT、RAM等组件 贡献和动机似乎框架类论文的发表，都有系列论文产生的规律，从DRESC到CGRA-ME。这一系列包括首发论文介绍框架，案例论文介绍使用，有时还有众多其中创新组件的单独论文。而该文就是CGRA-ME关于三大功能之一的物理实现的案例论文。 方法该案例中CGRA-ME的架构如下图所示。需要注意的是数据流图是从源码中基于人工标注提取出来的。 上图中CGRA-ME到三个主要功能包括： 从2的CGRA-ADL描述的架构到4输出的MRRG架构模型； 从1的包含人工标注数据流图DFG的应用源码到6的映射工具输出映射结果和配置流； 从2的CGRA-ADL描述的架构到7的RTL硬件描述语言生成，从而到模拟器或者硬件实现。 其中CGRA-ADL理论上能够描述任意CGRA架构； 映射模型则是能扩展到任意CGRA架构的整数线性规划（ILP）映射模型，能理论上产生最优解。虽然理论上映射速度最慢，但该文中针对所有Benchmark映射到$4\times4$尺寸CGRA的时间不超过12分钟。Question:大规模 最后CGRA的物理实现一般有三种方式：定制芯片；一个standard-cell ASIC；在FPGA上作为一层Overlay。其中定制CGRA芯片的成本太高，因此该文实现并比较了后两种方式实现的CGRA。 实验该文主要定义了基于ADRES架构模板的两个$4\times4$的变种架构实例，如下图所示，并对这两个CGRA实例在ASIC和FPGA物理硬件上进行了实现和比较。 Standard-Cell CGRA其中ASIC用的FreePDK45 standard-cell library，一个实验用途的开源45nm standard-cell库。而CGRA-ME生成的Verilog则用Synopsys‘ Design Compiler进行技术映射，具体分为最小面积（area）和最小时延（delay）两种映射；然后分析area breakdown，如下图所示； 接着将映射设计netlist输入standard-cell P&amp;R工具Cadence’s Innovus，得到的P&amp;R平面图如下图所示，输出SPEF文件和整个芯片面积（area），如下表第一列；最后用Synopsys’ PrimeTime工具在设计netlist和SPEF文件基础上，进行静态时间分析（Static Timing Analysis, STA），得到芯片工作频率参数，如下表第二列。 Full Arch Min Area Full Arch Min Delay Reduced Arch Min Area Reduced Arch Min Delay Area [μm2] 317927.0 403753.2 253239.8 327189.2 FMax [MHz] 140 164 142 192 而最后四种设计的硬件排布（layout）的物理视角和变形视角如下图所示。 FPGA-Overlay CGRA而FPGA的实验则用45nm的Altera Stratix IV FPGA芯片，在Altera/Intel的Quartus Prime 16.1上实现。而因为该FPGA上要实现CGRA的乘法器功能，只有通过DSP块。而由于该芯片DSP分布在某些列上，鉴于CGRA的设计需求，在硬件实现时DSP之间的LUT-based块将不会被充分利用。 在Stratix IV上实现两种架构，分析area breakdown得到下图，而统计的总体面积和性能参数如下表所示。其中面积的单位是ALMs（adaptive logic modules），每个ALM包含一个2输出可分割6输入LUT、一个进位链电路（carry-chain circuitry）和2个触发器（flip-flop）。另外包含乘法器（multiplier）的逻辑块使用Stratix IV中的DSP块，该面积并未列在表中统计。 Full Arch Reduced Arch Area [ALM] 8803 7192 FMax [MHz] 89 103 最后得到的FPGA实现硬件平面设计图如下图所示。 总结CGRA-ME集合了三大功能于一身，包括架构建模、应用映射和物理实现，提供了一个统一的CGRA设计平台。Question:定制芯片 Question:大规模. 但未知大规模情况下如何，就如FPGA的VPR和Titan Benchmark运行时间上的差别，但相应但CGRA也需要有大规模的架构设计。 &#8617; Question:定制芯片. 该文物理实现案例中并未提供第一种实现方式，也就是在定制芯片上实现，不知此方法能否用GEM5实现？CCF是否使用的这种实现方式？ &#8617; Reference [1] $Reference (Sites: $Publisher) Back]]></content>
+      <categories>
+        <category>Reconfigurable Computing</category>
+      </categories>
+      <tags>
+        <tag>CGRA</tag>
+        <tag>CGRA-ME</tag>
+        <tag>FPGA Overlay</tag>
+        <tag>Standard Cell</tag>
+        <tag>Physical Implementation</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[[Paper] RAMP: Resource-Aware Mapping for CGRAs]]></title>
+    <url>%2F2019%2F07%2F16%2F2019-07-16-Paper-RAMP%2F</url>
+    <content type="text"><![CDATA[简介针对当前映射操作依赖到布线资源的策略，都是在调度后阶段，即P&amp;R（Placement and Routing）阶段内调整布线方法，而没有重新调度全图，导致不能映射成功或者质量低下。该文则提出在调度前针对三类未能映射的失败情况，在多个备选布线策略中进行选择，再依据新策略重新调度DDG，最后P&amp;R。成功在映射质量、可映射数量以及求解速度方面得到全面提升。 团队相关工作现今各种的映射方法中，不同类型布线策略的最佳模型，均为备选策略。其中作为比较的，主要是寄存器感知和内存感知两种策略的模型。 贡献和动机提出一种新的映射步骤，在原两步映射的前面，加入一个新的布线策略选择步骤。 该方式既能针对不同的映射失败情况，选择最能利用资源的布线策略，提高映射质量； 又能实现布线策略修改后的重新调度，从而提高映射成功率； 另外模拟通用编译器，新提出一个利用其他PE上分布式寄存器组来布线的策略，当该策略失败再选择利用内存来布线的策略，进一步提高质量。 总而言之，有点像一个集大成的工作，融合了现存各类映射方法。具体是以明确的选择方式，针对不同的情况，选择较优的策略为每个不能映射的依赖做重新映射，从而有针对性的避免各个方法的缺点，实现只取各类方法的优势，避免短板。 方法针对每个不能映射的依赖，分析失败类型，分为以下三种： 依赖的前置操作和后置操作被调度在长距离时间（distant timing）；而单个寄存器组不能映射过长的依赖； 依赖的前置操作是一个正在操作的（live-in）或者只读（read-only）值； 依赖的前置操作和后置操作被调度在结果时间（consequent timing）；因为连线资源不够或者空余PE不足，因此不能映射该依赖； 针对上述三种类型，分别选择下图中某个或者某些布线策略进行重新调度和P&amp;R尝试，再在选择的策略的映射结果中选择最好的。 其中各个策略的简单示例如下图所示。 实验总结Reference [1] $Reference (Sites: $Publisher) Back]]></content>
+      <categories>
+        <category>Reconfigurable Computing</category>
+      </categories>
+      <tags>
+        <tag>CGRA</tag>
+        <tag>Mapping</tag>
+        <tag>Routing Strategy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[[Paper] CGRA Express: Accelerating Execution using Dynamic Operation Fusion]]></title>
+    <url>%2F2019%2F07%2F13%2F2019-07-13-Paper-CGRA-Express%2F</url>
+    <content type="text"><![CDATA[简介CGRA硬件是一组FU由某种风格的稀疏网络连接，并提供分布式寄存器组。FU提供通用整数操作，包括加减乘。相对于FPGA，其特性是提供门级别的可编程性，因此重构时间较短，且时延和能耗也较少。因为CGRA可编程，对应的有效编译系统则很重要。编译的主要挑战是指令调度。其调度的挑战则是稀疏的网络连接和分布式的寄存器组。CGRA上没有专用的布线资源，而是由FU在某个给定时刻被选择实现计算或者布线资源二者之一的功能。CGRA编译器大多集中在映射计算密集型最内层循环到计算阵列上。但对于latency-constrained code并不删除处理，包括非循环、外层循环和形成环的内层循环的代码。 团队密歇根大学（University of Michigan）的Scott Mahlke组，论文当时是Advanced Computer Architecture Laboratory实验室，但现在似乎搜索不到该实验室了。 相关工作CCA是类似的方法，但是不能覆盖所有的不可加速代码的情况。 贡献和动机AAC Benchmark中线性代码相对于循环代码的运行时间，占用了60%以上。因此加速线性代码以及不能软件流水化的循环代码是很重要的。而之前的相关研究并不能覆盖所有的不能直接加速代码的情况。因此本文提出动态操作融合方法，并给出支持该方法的硬件，最后给出实验评估。 方法假设在同一时钟周期中可以同时执行多个存储和计算操作，利用动态操作融合方法将操作通过旁路网络融合在同一个时钟周期内执行，从而缩短整个应用的执行时间。因此该方法核心在于： 分析一个时钟周期内可以执行多少操作： 通过测算实例内所有操作种类的时延，以及时钟周期。所有的操作的时延均不超过时钟周期的一半； 依据结果，建立新的单元叫tick，每个tick时延为0.25ns，用于调度。（切分时钟周期） 设计FU中的旁路网络： 在FU的输出寄存器后加一个二输入的多路器，能够从FU直接输出值和寄存器中选择值作为最终输出，从而降低融合时FU的时延； 代价则是控制流的增加，但仅3%左右。（类似极细的存储优化吗？） 基于上述设计优化调度算法 结果是对于整体测试应用，有7%-17%的执行时间提升，15%的能耗减少。 实验总结Reference [1] $Reference (Sites: $Publisher) Back]]></content>
+      <categories>
+        <category>Reconfigurable Computing</category>
+      </categories>
+      <tags>
+        <tag>CGRA</tag>
+        <tag>Operation Fusion</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[[Paper] (RAMS) Recurrence Cycle Aware Modulo Scheduling for Coarse-Grained Reconfigurable Architectures]]></title>
+    <url>%2F2019%2F06%2F28%2F2019-06-28-Paper-RAMS%2F</url>
+    <content type="text"><![CDATA[简介该文基于EMS方法，将属于同一个重复环（recurrence cycle）【怎么翻译？】RecMII的操作集中到一个聚合节点（clustered node）上，然后调度这些聚合节点。【这是类似Packing的思路吗？】死锁（Deadlock）会在两个或者更多的recurrence cycle互相依赖时产生【形成环？】。使用启发式方法延长循环时延来解决死锁【具体怎么做的？】。之前的工作需要权衡编译速度和结果质量，而该文的重复环感知方法则无须做这种权衡。 本文工作也是实现在他们自己的CGRA芯片和编译器解决方案中的，而调度结果的质量和速度均比基于模拟退火（simulated annealing, SA）的方法好。 RecMII. 受在当次迭代中仍然需要依赖的上一个迭代中的操作对象（operands）影响，限制II取更小值的限制之一。 &#8617; 相关工作 DRESC编译架构中使用基于模拟退火的模调度 先初始化一个调度，此时仅考虑操作依赖，而不考虑资源冲突 第二步调度器随机在FU之间移动操作，直到发现一个有效的调度 该方法可以取得较好的结果，但是太耗时 EMS集中在操作对象的布线，而不是操作的布局 调度时间大量减少 但调度质量没有DRESC好 该文分析质量下降的主要原因是重复环中操作的投机调度 把操作集中起来再布局到FU中，并不是该文首创 从前人工作中，可以看出其idea一般源于两类方向， 一类是针对调度单个迭代时产生的问题， 有方法层面的，例如增加计算资源利用率，包括：在调度时先集中操作再做布局，最后再布线；还有使用图着色算法等； 也有硬件层面的，例如在调度中降低内存瓶颈、考虑连线时延等，包括建立操作树；将内部连线的时延和数量加入代价函数（cost function）； 还有直接设计架构或者针对特定调度方法微调架构等。 另一类则是直接针对模调度算法 引入模拟退火作为调度算法，但编译太耗时，耗费甚至可能超过几天的时间； 在基于SA方法的中实现资源感知的布局方法，一定程度减少时间，但仍旧不能接受； 使用经典图嵌入方法来映射DFG到硬件三维图表示中； 以边为中心的模调度（edge- centric modulo scheduling, EMS）框架，集中在数据的操作对象（operands）的布线上，而不是数据的操作方式（operations）； 贡献 一个重复环感知的模调度技术，来移除调度中的非必须限制。 一个架构的微小改进，来显著提高调度质量。【软硬件协同设计？】 动机EMS可以在局部对每个操作及其操作对象对布局布线产生快速有效对调度，但不能对全局的操作的调度顺序提供一个解决方案。现存EMS是基于操作在DFG中的高度（height）作为顺序的。而如果是调度一个重复环中的操作，则可能未考虑其生产者，先行局部调度。这就在调度中造成了非必须的约束，因为生产者需要与消费者在同一个II周期内，从而导致II的提升，影响调度质量。 换句话说，一旦一个重复环内的操作被调度，从而固定了调度时刻，则所有周期内的其他操作就被绑定在了该时刻。例如对下图中左边的数据流图映射到右边的架构中的过程进行调度。 按DFG中高度来算优先级的话，会产生如下图的调度过程。没有输入的1，2，4，6是最高优先的，而仅有一个输入边的7也是最优先调度的操作之一。按该顺序开始调度，则会卡在下图的时刻4，因为没有多余的计算资源以供操作9使用。由于7被绑定在时刻3，重复环的时间限制则会要求操作10和11被调度到时刻4和5中。而操作9因为时刻3中没有可用的布线资源，也需要在时刻4中布局，和操作10分配仅剩的一个空余slot。 重复环感知的CGRA映射该方法的核心是一个智能操作排序策略，考虑重复环之间的关系，从而克服上述问题。 该方法先把重复环打包到一个聚合节点中，当作DFG中的单个节点。然后把其中的操作一起调度。对上述示例的打包如下图所示。该步骤其实对输入DFG进行了转换，形成了一个无环图，并重新计算高度，而该转换是解决上述问题的核心。 这样，重复环的所有生产者操作都会被先行调度，不管环中的操作优先级是不是更高。而当某个重复环代表的聚合节点的所有生产者都被调度后，无视优先级立即对聚合节点进行调度。重复环越早调度越好，因为此时资源尚未被太多占用。上述示例的调度结果如下图所示。 硬件架构修改修改RF的连接方式，如下图所示，从而增加值可传递的范围，增加了可调度的可能性，但也增加了长距离通信的时延，不过从结果看是有好处的。 实验结果 Reference [1] Oh, Taewook, Bernhard Egger, Hyunchul Park, and Scott Mahlke. “Recurrence cycle aware modulo scheduling for coarse-grained reconfigurable architectures.” In Proceedings of the 2009 ACM SIGPLAN/SIGBED conference on Languages, compilers, and tools for embedded systems (LCTES ‘09), pp. 21-30. ACM, 2009. (Sites: ACM) Back]]></content>
+      <categories>
+        <category>Reconfigurable Computing</category>
+      </categories>
+      <tags>
+        <tag>CGRA</tag>
+        <tag>Architecture</tag>
         <tag>Modulo Scheduling</tag>
+        <tag>EMS</tag>
+        <tag>Recurrence Cycle</tag>
       </tags>
   </entry>
   <entry>
@@ -19,8 +80,9 @@
         <category>Reconfigurable Computing</category>
       </categories>
       <tags>
-        <tag>case study</tag>
         <tag>ADRES</tag>
+        <tag>CGRA</tag>
+        <tag>Case Study</tag>
         <tag>Modulo Scheduling</tag>
         <tag>VLIW</tag>
       </tags>
@@ -33,10 +95,10 @@
         <category>Reconfigurable Computing</category>
       </categories>
       <tags>
-        <tag>Survey</tag>
         <tag>CGRA</tag>
-        <tag>Mapping</tag>
         <tag>Architecture</tag>
+        <tag>Survey</tag>
+        <tag>Mapping</tag>
         <tag>Scheduling</tag>
       </tags>
   </entry>
@@ -60,8 +122,8 @@
         <category>Conference</category>
       </categories>
       <tags>
-        <tag>Record</tag>
         <tag>Compiler</tag>
+        <tag>Record</tag>
         <tag>Computer Architecture</tag>
       </tags>
   </entry>
