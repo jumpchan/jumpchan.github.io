@@ -50,6 +50,6 @@ date: 2019-07-18 21:56:43
 
 ## Reference
 
-> [1] $Reference (Sites: [$Publisher][self]) [Back](#简介)
+> [1] Karunaratne, M., Tan, C., Kulkarni, A., Mitra, T., & Peh, L.-S. (2018). Dnestmap: Mapping Deeply-Nested Loops on Ultra-Low Power CGRAs. In Proceedings of the 55th Annual Design Automation Conference on - DAC ’18 (pp. 1–6). New York, New York, USA: ACM Press.  (Sites: [ACM][self]) [Back](#简介)
 
-[self]: $site "[1] ${{ title }}"
+[self]: https://doi.org/10.1145/3195970.3196027 "[1] ${{ title }}"

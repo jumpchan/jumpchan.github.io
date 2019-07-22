@@ -117,6 +117,6 @@ CGRA-ME集合了三大功能于一身，包括架构建模、应用映射和物�
 
 ## Reference
 
-> [1] $Reference (Sites: [$Publisher][self]) [Back](#简介)
+> [1] Chin, S. A., Niu, K. P., Walker, M., Yin, S., Mertens, A., Lee, J., & Anderson, J. H. (2018). Architecture Exploration of Standard-Cell and FPGA-Overlay CGRAs Using the Open-Source CGRA-ME Framework. In Proceedings of the 2018 International Symposium on Physical Design - ISPD ’18 (pp. 48–55). New York, New York, USA: ACM Press.  (Sites: [ACM][self]) [Back](#简介)
 
-[self]: $site "[1] ${{ title }}"
+[self]: https://doi.org/10.1145/3177540.3177553 "[1] ${{ title }}"
