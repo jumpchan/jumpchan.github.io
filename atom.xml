@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://qpchen.tk/"/>
-  <updated>2019-07-22T09:39:42.000Z</updated>
+  <updated>2019-07-29T09:35:56.000Z</updated>
   <id>http://qpchen.tk/</id>
   
   <author>
@@ -15,6 +15,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[Paper] HyCUBE: A CGRA with Reconfigurable Single-cycle Multi-hop Interconnect</title>
+    <link href="http://qpchen.tk/2019/07/29/2019-07-29-Paper-HyCUBE/"/>
+    <id>http://qpchen.tk/2019/07/29/2019-07-29-Paper-HyCUBE/</id>
+    <published>2019-07-29T16:09:34.000Z</published>
+    <updated>2019-07-29T09:35:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>第一篇内部连线可重构的CGRA架构。该架构在长距离FU之间提供单周期通信，因此不仅使得映射问题更高效，也取得比传统N2N（neighbor to neighbor）连接的CGRA三倍的效能功耗比（performance-per-watt）。</p><a id="more"></a><h2 id="团队"><a href="#团队" class="headerlink" title="团队"></a>团队</h2><p>新加坡国立大学的系列工作中，CGRA体系结构的研究。</p><h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><p>CGRA的传统连接方式大多是基于mesh，也就是邻居相连的结构。而进阶版也是多几个固定的跨越邻居的连线（mesh-plus），且连线方式是固定的。<br>关于mesh/multi-hop/ad-hop等概念，似乎是通信/无线网领域的技术，通过分布式节点构建完整的网络，因此用在了CGRA上。【具体还需要进一步调研】<br>而此前并没有关于CGRA内部连线的可重构设计工作。</p><h2 id="贡献和动机"><a href="#贡献和动机" class="headerlink" title="贡献和动机"></a>贡献和动机</h2><p>传统的长路径FU需要利用FU的布线功能来实现，这样不仅因为寄存器需要多周期，而且因为占用了FU作为布线资源，计算资源则相应减少，增加了映射限制。因此提供可配置的长路径布线功能则一方面维持简单的架构，保持低能耗，又提高了资源高效利用的可能性，提高性能，如下图例子中所示，d的性能优于c。</p><img src="https://qpimg.ml/images/2019/07/29/Mapping-of-DFG-on-N2N-CGRA-and-HyCUBE.png" width="500" title="Mapping of DFG on N2N CGRA and HyCUBE"><ul><li>提出新的结合了NoC的CGRA架构，该NoC拥有单周期多跳功能来为FUs创建虚拟动态的邻居，从而实现内部连线可重构；</li><li>提供基于新架构的应用映射问题，扩展MRRG来包含动态单周期路径；</li><li>在TSMC（台积电）28nm芯片上实现新架构，并与传统架构进行比较。</li></ul><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>该文提出的新架构，其网络拓扑结构仍然是mesh结构的，具体如下图所示。</p><img src="https://qpimg.ml/images/2019/07/29/A-4x4-HyCUBE-Architecture-with-a-single-cycle-multi-hop-multi-cast-path-between-tiles-scheduled-com--pletely-at-compile-time.png" width="600" title="A 4x4 HyCUBE Architecture, with a single-cycle multi-hop multi-cast path between tiles, scheduled com- pletely at compile time"><p>允许某个FU在单周期访问多个远距离FUs的核心设计，就是在每个FU中增加一个6输入7输出的交叉开关（crossbar switch）。它管理来自四个方向的信号，使其要么使四个方向的信号异步地绕过（bypass），通过四个方向无时延中继器（clockless repeater），传递到下一个FU，或者停止信号传输，接收输入信号。而经过一个有SMART NoC的32nm处理器验证，无时延中继器能够在1ns内最多连接11跳。因此$4 \times 4$尺寸的HyCUBE上一般不会达到11跳的路径上限。<sup><a href="#fn_Question:Size" id="reffn_Question:Size">Question:Size</a></sup></p><p>而在映射问题中，将该可重构设计在硬件抽象MRRG里表示出来则是主要工作，具体将中继器的所有可能的连线都作为一个布线资源的节点，表达在MRRG中，则可以抽象出所有的连接可能。如下图所示是一个$2 \times 2$的HyCUBE抽象MRRG，以及映射结果的展示。</p><img src="https://qpimg.ml/images/2019/07/29/MRRG-of-HyCUBE-with-single-cycle-routing.png" width="400" title="MRRG of HyCUBE with single-cycle routing"><!-- writing here --><!-- ![Alt_text](site "Title") --><!-- <img class="site 500 Title"> --><h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><p>该文用RTL实现$4 \times 4$HyCUBE架构，并在台积电（TSMC）28nm处理器上映射，用Synopsys Design Compiler作综合，用Cadence Encounter做布局布线。HyCUBE的编译器则作为LLVM 3.9的一个pass实现，用于将应用映射完成后对循环内核生成指令流。指令流则将被RTL模拟器用于评估能耗。而用于测试对循环内核是从MiBench和CortexSuite中挑选出来的。</p><p>作为比较，本文使用了两个基准CGRA架构，一个是标准的NoC（将无时延中继器换成有时延的），一个是N2N（传统CGRA）。具体各个指标的比较如下所示。</p><img src="https://qpimg.ml/images/2019/07/29/Quality-of-Mapping-MIIMapped-II.png" width="350" title="Quality of Mapping (MII/Mapped II)"><img src="https://qpimg.ml/images/2019/07/29/Compilation-Time.png" width="350" title="Compilation Time"><img src="https://qpimg.ml/images/2019/07/29/Performance-per-watt-w.r.t.-N2N-CGRA.png" width="350" title="Performance-per-watt w.r.t. N2N CGRA"><p>而与其他加速器的比较如下图所示，HyCUBE可以很好地扩展到$4 \times 4$尺寸（相对比SRP的$3 \times 3$）；相比ARM（Cortex A5）能够提供3倍的性能和4倍的效能功耗比；相比FPGA（Artex 7）则主要在效能功耗比上具有明显优势，且对于相同应用，由于HyCUBE内部连线的可重构性，最终的映射结果更可能获得最佳的性能。</p><img src="https://qpimg.ml/images/2019/07/29/a-HyCUBE-chip-layout-bPower-Performance-comparison-with-commercial-processors-and-accelerators.png" width="350" title="(a) HyCUBE chip layout (b)Power-Performance comparison with commercial processors and accelerators"><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>HyCUBE首次提出功能单元之间的可重构的单周期多跳内部连线，允许单周期内布线，并基于此提出一个高效的编译器。</p><p>但该架构尺寸似乎文中仅扩展到$4 \times 4$，原因猜测为中继器的无时延路径不能过长导致的。而传统的NoC则加速没有那么高，不过传统NoC是不是也没有相关工作？因为本文实验中的StdNoC似乎是为了验证单周期特性而特别提出的架构。那么StdNoC可以作为大尺寸CGRA的解决方案？</p><blockquote id="fn_Question:Size"><sup>Question:Size</sup>. HyCUBE仍然是小尺寸低功耗处理器。$4 \times 4$的规模，是否因为中继器的原因不能扩展？<a href="#reffn_Question:Size" title="Jump back to footnote [Question:Size] in the text."> &#8617;</a></blockquote><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><blockquote><p>[1] $Reference (Sites: <a href="$site" title="[1] $[Paper] HyCUBE: A CGRA with Reconfigurable Single-cycle Multi-hop Interconnect">$Publisher</a>) <a href="#简介">Back</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;第一篇内部连线可重构的CGRA架构。该架构在长距离FU之间提供单周期通信，因此不仅使得映射问题更高效，也取得比传统N2N（neighbor to neighbor）连接的CGRA三倍的效能功耗比（performance-per-watt）。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Reconfigurable Computing" scheme="http://qpchen.tk/categories/Reconfigurable-Computing/"/>
+    
+    
+      <category term="CGRA" scheme="http://qpchen.tk/tags/CGRA/"/>
+    
+      <category term="Architecture" scheme="http://qpchen.tk/tags/Architecture/"/>
+    
+      <category term="Interconnect" scheme="http://qpchen.tk/tags/Interconnect/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[Paper] Auto-Tuning CNNs for Coarse-Grained Reconfigurable Array-Based Accelerators</title>
+    <link href="http://qpchen.tk/2019/07/22/2019-07-22-Paper-Auto-Tuning-CNNs-for-CGRA/"/>
+    <id>http://qpchen.tk/2019/07/22/2019-07-22-Paper-Auto-Tuning-CNNs-for-CGRA/</id>
+    <published>2019-07-22T21:29:50.000Z</published>
+    <updated>2019-07-29T09:35:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>2018年11月份发表的TCAD期刊论文。该文针对深度卷积神经网络（CNN）映射到不同尺寸SRP（三星商用CGRA）上的场景，提出一个自动微调编译器，依据神经网络结构源码和硬件架构特性，自动探索优化空间，生成优化后的代码，从而输入传统的映射方法完成网络到CGRA的映射。相对于传统直接映射，该文编译器能取得11倍的质量提升。</p><a id="more"></a><h2 id="团队"><a href="#团队" class="headerlink" title="团队"></a>团队</h2><p>首尔大学的硕士生做的研究，导师在三星做了三年工作。</p><h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><p>没有较通用的针对不同配置CGRA的CNN映射工作，前人的都是针对特定架构的CGRA，映射CNN。</p><h2 id="贡献和动机"><a href="#贡献和动机" class="headerlink" title="贡献和动机"></a>贡献和动机</h2><p>CNN中卷积层和全连阶层包含了大量循环迭代步骤，简单的循环体集中了大量上一层网络的数据和当前网络的权值之间的乘积操作。这样的应用很适合于用CGRA来进行硬件加速，但难点在于其多重嵌套循环，以及频繁的数据读写需求。<br>该文提出的自动化方法主要用于展开多重嵌套循环，使得计算密集型操作都展开并集中到最内层循环中；另外通过一些计算模式上的自动切换，尽量减少数据读写操作，进一步加速映射结果。</p><h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>架构如图所示，主要工作集中在源码转换，涉及模调度计算之前的所有代码分析和转换的自动化方法。</p><img src="https://qpimg.ml/images/2019/07/28/Optimization-steps.png" width="500" title="Optimization Steps"><p>1和2部分选择卷积核的实现并生成每层网络的代码；包括网络训练、结构等设置相关的各个常量在3中发现并传递；4中则将激活函数的函数调用在最内层循环中展开；5则通过一个运行时时延估计模型来探索源码级转换技术的最佳组合，包括循环展开、循环合并和循环交换。最后在6中将最佳组合应用到抽象语法树上，并最终通过一个模调度器映射到CGRA上。</p><p>其中<strong>卷积核实现</strong>的选择需要考虑到卷积核尺寸和CGRA硬件尺寸及读写单元数量等因素，如下图所示，有两种较优的实现方式以供选择。</p><img src="https://qpimg.ml/images/2019/07/29/Computation-of-a-convolution-with-im2colGEMM-and-im2rowoptCGRA.png" width="450" title="Computation of a convolution with im2col+GEMM and im2row+optCGRA"><p>显然第二种方式im2row+optCGRA能显著减少读写操作，利于循环展开，但如果CGRA的寄存器不足则可能需要外部存储单元的支持，第二种方式反而变得过于复杂。因此当CGRA寄存器能存储的数据量多于需要存储的数据量（$k \times k + k \times (k - 1)$）的两倍时，选择第二种方式，不然则用第一种方式im2col+GEMM。</p><p>而<strong>循环展开自动化探索</strong>则是通过找到最佳UF（Unrolling Factor）来实现，对于n层嵌套循环，则需要探索n个UF组成的向量，每层循环1个UF。特殊情况下，原循环（1到iter）通过UF展开，则会形成新的1到「iter/UF」的循环，每个迭代内包含原UF个迭代的所有操作，而剩下的「iter/UF」到「iter」的迭代则由另一个可展开的循环处理。具体探索过程从1到maxUF逐一尝试，该文设置maxUF为8，形象的处理过程如图所示。<sup><a href="#fn_Question:UF" id="reffn_Question:UF">Question:UF</a></sup></p><img src="https://qpimg.ml/images/2019/07/29/Recursive-exploration-of-UFs.png" width="450" title="Recursive exploration of UFs"><p>其中评估结果的好坏需要时延评估。最内层循环的时延的评估则是近似地根据最小启动间隔（MII）和迭代数量（n）相乘决定地。而嵌套循环的时延评估则需要考虑外层循环，通过MII与所有外层循环的迭代数（iter<sub>total</sub>）相乘得到。</p><p>该文最终实验量9种不同配置的CGRA，从$2 \times 2$到$4 \times 4$，如下图所示。</p><img src="https://qpimg.ml/images/2019/07/29/Screen-Shot-2019-07-29-at-15.53.51.png" width="500" title="CGRA overview and configurations"><!-- writing here --><!-- ![Alt_text](site "Title") --><!-- <img class="site 500 Title"> --><h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><p>该文比较了4种CNN在SRP（CGRA）上实现，与其他低功耗处理器的速度、能耗、工作频率等的比较，具体数值如下表所示。</p><img src="https://qpimg.ml/images/2019/07/29/COMPARISON-WITH-DIFFERENT-ACCELERATORS.png" width="700" title="COMPARISON WITH DIFFERENT ACCELERATORS"><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul><li>该文中常量部分提到batch size的设置，但没有专门的训练优化？<br>该论文中似乎没提到针对训练进行优化。训练主要涉及频繁的参数更新，也就是内存/寄存器读写操作。<br>对于AIoT领域，或者其他嵌入式应用场景，虽然大多数时候是Inference较多，但是很多时候也涉及参数微调（迁移学习）操作。因此针对训练的优化也很重要。</li><li>CGRA并不天然支持浮点数运算，让PE支持浮点数运算需要付出什么？</li><li>模调度的布线策略选择能否结合CNN进行？</li></ul><blockquote id="fn_Question:UF"><sup>Question:UF</sup>. Unrolling Factor计算的相关工作是哪些？单层循环展开以及嵌套循环的循环展开区别和技巧有哪些？UF向量的思路其实是把嵌套循环的展开问题作为一个三维空间的搜索问题？<a href="#reffn_Question:UF" title="Jump back to footnote [Question:UF] in the text."> &#8617;</a></blockquote><h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><blockquote><p>[1] Bae, I., Harris, B., Min, H., &amp; Egger, B. (2018). Auto-Tuning CNNs for Coarse-Grained Reconfigurable Array-Based Accelerators. IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems, 37(11), 2301–2310.  (Sites: <a href="https://doi.org/10.1109/TCAD.2018.2857278" title="[1] $[Paper] Auto-Tuning CNNs for Coarse-Grained Reconfigurable Array-Based Accelerators" target="_blank" rel="noopener">IEEE</a>) <a href="#简介">Back</a></p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h2&gt;&lt;p&gt;2018年11月份发表的TCAD期刊论文。该文针对深度卷积神经网络（CNN）映射到不同尺寸SRP（三星商用CGRA）上的场景，提出一个自动微调编译器，依据神经网络结构源码和硬件架构特性，自动探索优化空间，生成优化后的代码，从而输入传统的映射方法完成网络到CGRA的映射。相对于传统直接映射，该文编译器能取得11倍的质量提升。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Reconfigurable Computing" scheme="http://qpchen.tk/categories/Reconfigurable-Computing/"/>
+    
+    
+      <category term="CGRA" scheme="http://qpchen.tk/tags/CGRA/"/>
+    
+      <category term="CNN" scheme="http://qpchen.tk/tags/CNN/"/>
+    
+  </entry>
   
   <entry>
     <title>[Paper] DNestMap: Mapping Deeply-Nested Loops on Ultra-Low Power CGRAs</title>
