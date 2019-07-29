@@ -73,6 +73,6 @@ HyCUBE首次提出功能单元之间的可重构的单周期多跳内部连线�
 
 ## Reference
 
-> [1] $Reference (Sites: [$Publisher][self]) [Back](#简介)
+> [1] Karunaratne, M., Mohite, A. K., Mitra, T., & Peh, L.-S. (2017). HyCUBE: A CGRA with Reconfigurable Single-cycle Multi-hop Interconnect. In Proceedings of the 54th Annual Design Automation Conference 2017 on - DAC ’17 (pp. 1–6). New York, New York, USA: ACM Press.  (Sites: [ACM][self]) [Back](#简介)
 
-[self]: $site "[1] ${{ title }}"
+[self]: https://doi.org/10.1145/3061639.3062262 "[1] ${{ title }}"
